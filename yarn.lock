@@ -42,7 +42,7 @@
   dependencies:
     arrify "^1.0.1"
 
-"@devprotocol/khaos-core@^0.1.2":
+"@devprotocol/khaos-core@0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@devprotocol/khaos-core/-/khaos-core-0.1.2.tgz#22911354b8fab5dcccafce1118f1196c17945cec"
   integrity sha512-uJ6VdLGCnwlI73tS79zmOo9tCuSvImnWUt/wphCpeBIaY0/TRVFcHPMKn1r5pMJ0AO3+H0vTfp66eBCC0NzQFw==
@@ -53,7 +53,7 @@
     jsonwebtoken "^8.5.1"
     ramda "^0.27.1"
 
-"@devprotocol/util-ts@^1.4.0":
+"@devprotocol/util-ts@1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@devprotocol/util-ts/-/util-ts-1.4.0.tgz#583148639c3be0a902d314daf66c321745d1e5ae"
   integrity sha512-HcRSIA5hvo1JkjMs27NWJI6wjVmM4pepyrP1OKaHxwKYzINLV2Slc+2ME+vD4lS9PgVWqKY2DLy+INv18KeXDQ==
@@ -3173,7 +3173,7 @@ eslint@7.16.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-esm@^3.2.25:
+esm@3.2.25:
   version "3.2.25"
   resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
   integrity sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
@@ -7819,7 +7819,7 @@ type-detect@4.0.8, type-detect@^4.0.8:
   resolved "https://registry.yarnpkg.com/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
   integrity sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==
 
-type-fest@^0.20.2:
+type-fest@0.20.2:
   version "0.20.2"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
   integrity sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==
