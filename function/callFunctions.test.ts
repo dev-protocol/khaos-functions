@@ -13,14 +13,14 @@ test('Calls `addresses` when the passed options.method is "addresses"', async (t
 		method: 'addresses',
 		options: { network: 'mainnet' },
 	})
-	t.is(res, await example.addresses('mainnet'))
+	t.is(res, await example.addresses({ network: 'mainnet' }))
 })
 
 test('Calls `authorize` when the passed options.method is "authorize"', async (t) => {
 	const res = await callFunctions(example, {
 		id: '',
 		method: 'authorize',
-		options: { message: '', secret: '', req: {} as any },
+		options: { message: '', secret: '', request: {} as any },
 	})
 	t.is(res, true)
 })
@@ -30,8 +30,8 @@ test('Calls `oraclize` when the passed options.method is "oraclize"', async (t) 
 		id: '',
 		method: 'oraclize',
 		options: {
-			signedOptions: { id: '', address: '0x0', message: 'text' },
-			queryData: {
+			signatureOptions: { id: '', address: '0x0', message: 'text' },
+			query: {
 				publicSignature: '',
 				allData: [{}],
 				transactionhash: '0x0',

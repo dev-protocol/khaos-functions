@@ -3,7 +3,8 @@ import { always } from 'ramda'
 
 const { abi, addresses, authorize, oraclize } = {
 	abi: ['abi'],
-	addresses: (net: string) => Promise.resolve(`0x0_${net}`),
+	addresses: ({ network }: { readonly network: string }) =>
+		Promise.resolve(`0x0_${network}`),
 	authorize: always(Promise.resolve(true)),
 	oraclize: always(
 		Promise.resolve({

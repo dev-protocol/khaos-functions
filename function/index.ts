@@ -1,8 +1,8 @@
 import { AzureFunction, Context, HttpRequest } from '@azure/functions'
 import {
-	NetworkName,
-	PublicSignatureOptions,
-	QueryData,
+	FunctionAddressesOptions,
+	FunctionAuthorizerOptions,
+	FunctionOraclizerOptions,
 } from '@devprotocol/khaos-core/types'
 import { whenDefined } from '@devprotocol/util-ts/esm/utils'
 import { Merge } from 'type-fest'
@@ -26,9 +26,7 @@ export type AddressesOptions = Merge<
 	Base,
 	{
 		readonly method: 'addresses'
-		readonly options: {
-			readonly network: NetworkName
-		}
+		readonly options: FunctionAddressesOptions
 	}
 >
 
@@ -36,11 +34,7 @@ export type AuthorizeOptions = Merge<
 	Base,
 	{
 		readonly method: 'authorize'
-		readonly options: {
-			readonly message: string
-			readonly secret: string
-			readonly req: HttpRequest
-		}
+		readonly options: FunctionAuthorizerOptions
 	}
 >
 
@@ -48,11 +42,7 @@ export type OraclizeOptions = Merge<
 	Base,
 	{
 		readonly method: 'oraclize'
-		readonly options: {
-			readonly signedOptions: PublicSignatureOptions
-			readonly queryData: QueryData
-			readonly network: NetworkName
-		}
+		readonly options: FunctionOraclizerOptions
 	}
 >
 
