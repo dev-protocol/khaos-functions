@@ -1,8 +1,8 @@
 import ipfsHttpClient from 'ipfs-http-client'
 import { always } from 'ramda'
 const ipfs = ipfsHttpClient({
-	host: 'ipfs.infura.io',
-	port: 5001,
+	host: 'ipfs.io',
+	port: 443,
 	protocol: 'https',
 })
 
