@@ -5,45 +5,45 @@ import {
 	FunctionOraclizerOptions,
 } from '@devprotocol/khaos-core/types'
 import { whenDefined } from '@devprotocol/util-ts/esm/utils'
-import { Merge } from 'type-fest'
+import { Merge, SetOptional } from 'type-fest'
 import { callFunctions } from './callFunctions'
 import { importFunctions } from './importFunctions'
 
-export type Base = {
+export type Base = SetOptional<{
 	readonly id: string
 	readonly method: string
 	readonly options: never
-}
+}>
 
 export type AbiOptions = Merge<
 	Base,
-	{
+	SetOptional<{
 		readonly method: 'abi'
-	}
+	}>
 >
 
 export type AddressesOptions = Merge<
 	Base,
-	{
+	SetOptional<{
 		readonly method: 'addresses'
-		readonly options: FunctionAddressesOptions
-	}
+		readonly options: SetOptional<FunctionAddressesOptions>
+	}>
 >
 
 export type AuthorizeOptions = Merge<
 	Base,
-	{
+	SetOptional<{
 		readonly method: 'authorize'
-		readonly options: FunctionAuthorizerOptions
-	}
+		readonly options: SetOptional<FunctionAuthorizerOptions>
+	}>
 >
 
 export type OraclizeOptions = Merge<
 	Base,
-	{
+	SetOptional<{
 		readonly method: 'oraclize'
-		readonly options: FunctionOraclizerOptions
-	}
+		readonly options: SetOptional<FunctionOraclizerOptions>
+	}>
 >
 
 export type CallingOptions =
@@ -59,7 +59,7 @@ const httpTrigger: AzureFunction = async (
 	const { body } = req
 	const { id, ...props } = body as CallingOptions
 
-	const funtions = await importFunctions(id)
+	const funtions = await whenDefined(id, (x) => importFunctions(x))
 	const data = await whenDefined(funtions, (f) =>
 		callFunctions(f, { id, ...props })
 	)

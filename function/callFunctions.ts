@@ -8,7 +8,7 @@ import {
 	OraclizeOptions,
 } from '.'
 import { always, cond, isNil } from 'ramda'
-import { whenDefined } from '@devprotocol/util-ts/esm/utils'
+import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts/esm/utils'
 
 const isAbi = (opts: CallingOptions): opts is AbiOptions =>
 	opts.method === 'abi'
@@ -36,13 +36,43 @@ export const callFunctions = <T extends CallingOptions>(
 	cond([
 		[isNil, always(undefined)],
 		[isAbi, always(f.abi)],
-		[isAuthorize, f.authorize],
+		[
+			isAuthorize,
+			always(
+				((opts) =>
+					whenDefinedAll(
+						[
+							opts?.options?.message,
+							opts?.options?.secret,
+							opts?.options?.request,
+						],
+						([message, secret, request]) =>
+							f.authorize({ message, secret, request })
+					))(options as AuthorizeOptions)
+			),
+		],
 		[
 			isAddresses,
-			always(whenDefined((options as AddressesOptions)?.options, f.addresses)),
+			always(
+				whenDefined(
+					(options as AddressesOptions)?.options?.network,
+					(network) => f.addresses({ network })
+				)
+			),
 		],
 		[
 			isOraclize,
-			always(whenDefined((options as OraclizeOptions)?.options, f.oraclize)),
+			always(
+				((opts) =>
+					whenDefinedAll(
+						[
+							opts?.options?.signatureOptions,
+							opts?.options?.query,
+							opts?.options?.network,
+						],
+						([signatureOptions, query, network]) =>
+							f.oraclize({ signatureOptions, query, network })
+					))(options as OraclizeOptions)
+			),
 		],
 	])(options)
