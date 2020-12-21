@@ -622,7 +622,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/bl@^2.1.0":
+"@types/bl@2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@types/bl/-/bl-2.1.0.tgz#45c881c97feae1223d63bbc5b83166153fcb2a15"
   integrity sha512-1TdA9IXOy4sdqn8vgieQ6GZAiHiPNrOiO1s2GJjuYPw4QVY7gYoVjkW049avj33Ez7IcIvu43hQsMsoUFbCn2g==
@@ -1831,7 +1831,7 @@ bip39@2.5.0:
     safe-buffer "^5.0.1"
     unorm "^1.3.3"
 
-bl@^4.0.0, bl@^4.0.3:
+bl@4.0.3, bl@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/bl/-/bl-4.0.3.tgz#12d6287adc29080e22a705e5764b2a9522cdc489"
   integrity sha512-fs4G6/Hu4/EE+F75J8DuN/0IpQqNjAdC7aEQv7Qt8MHGUH7Ckv2MwTEEeN9QehD0pfIDkMI1bkHYkKy7xHyKIg==
@@ -4744,7 +4744,7 @@ ipfs-core-utils@^0.5.4:
     timeout-abort-controller "^1.1.1"
     uint8arrays "^1.1.0"
 
-ipfs-http-client@^48.1.3:
+ipfs-http-client@48.1.3:
   version "48.1.3"
   resolved "https://registry.yarnpkg.com/ipfs-http-client/-/ipfs-http-client-48.1.3.tgz#d9b91b1f65d54730de92290d3be5a11ef124b400"
   integrity sha512-+JV4cdMaTvYN3vd4r6+mcVxV3LkJXzc4kn2ToVbObpVpdqmG34ePf1KlvFF8A9gjcel84WpiP5xCEV/IrisPBA==
