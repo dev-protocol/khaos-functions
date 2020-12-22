@@ -1,6 +1,7 @@
 import { UndefinedOr } from '@devprotocol/util-ts/cjs/types'
 import bent from 'bent'
 import { always } from 'ramda'
+import { fetchRegistry } from '../scripts/libs/fetchRegistry'
 import { V0Options, V0Results } from '../v0'
 
 type Options<V> = V extends 'v0' ? V0Options : never
@@ -21,3 +22,5 @@ export const call = <V extends 'v0'>(
 			.then((r) => (r as unknown) as Results<V, O>)
 			.catch(always(undefined))
 }
+
+export const ids: typeof fetchRegistry = always(fetchRegistry())

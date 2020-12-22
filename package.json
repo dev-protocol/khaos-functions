@@ -5,10 +5,7 @@
 	"main": "dist/cjs/libs/index.js",
 	"module": "dist/libs/index.js",
 	"files": [
-		"dist/libs",
-		"dist/v0",
-		"dist/cjs/libs",
-		"dist/cjs/v0",
+		"dist",
 		"!**/*.test.*"
 	],
 	"scripts": {
