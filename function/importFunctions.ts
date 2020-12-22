@@ -1,5 +1,5 @@
 import { Functions } from '@devprotocol/khaos-core/types'
-import { UndefinedOr } from '@devprotocol/util-ts/esm/types'
+import { UndefinedOr } from '@devprotocol/util-ts/cjs/types'
 import { always } from 'ramda'
 
 export const importFunctions = async (

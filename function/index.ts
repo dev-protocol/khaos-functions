@@ -4,7 +4,7 @@ import {
 	FunctionAuthorizerOptions,
 	FunctionOraclizerOptions,
 } from '@devprotocol/khaos-core/types'
-import { whenDefined } from '@devprotocol/util-ts/esm/utils'
+import { whenDefined } from '@devprotocol/util-ts/cjs/utils'
 import { Merge, SetOptional } from 'type-fest'
 import { callFunctions } from './callFunctions'
 import { importFunctions } from './importFunctions'

@@ -1,5 +1,5 @@
 import { Functions } from '@devprotocol/khaos-core/types'
-import { UndefinedOr } from '@devprotocol/util-ts/esm/types'
+import { UndefinedOr } from '@devprotocol/util-ts/cjs/types'
 import {
 	AbiOptions,
 	AddressesOptions,
@@ -8,7 +8,7 @@ import {
 	OraclizeOptions,
 } from '.'
 import { always, cond, isNil } from 'ramda'
-import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts/esm/utils'
+import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts/cjs/utils'
 
 const isAbi = (opts: CallingOptions): opts is AbiOptions =>
 	opts.method === 'abi'
