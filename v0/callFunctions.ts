@@ -1,4 +1,8 @@
-import { Functions } from '@devprotocol/khaos-core/types'
+import {
+	Abi,
+	FunctionOraclizeResults,
+	Functions,
+} from '@devprotocol/khaos-core/types'
 import { UndefinedOr } from '@devprotocol/util-ts/cjs/types'
 import {
 	AbiOptions,
@@ -25,13 +29,13 @@ export type CallFunctions<T extends V0Options> = (
 ) => Promise<
 	UndefinedOr<
 		T extends AbiOptions
-			? Functions['abi']
+			? Abi
 			: T extends AddressesOptions
-			? AsyncReturnType<Functions['addresses']>
+			? string
 			: T extends AuthorizeOptions
-			? AsyncReturnType<Functions['authorize']>
+			? boolean
 			: T extends OraclizeOptions
-			? AsyncReturnType<Functions['oraclize']>
+			? FunctionOraclizeResults
 			: never
 	>
 >
