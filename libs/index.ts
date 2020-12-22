@@ -14,7 +14,7 @@ export const call = <V extends 'v0', O extends Options<V>>(
 		'POST',
 		'json'
 	)
-	return <O>(options: O) =>
+	return (options: O) =>
 		fetcher(`/${version}`, options)
 			.then((r) => (r as unknown) as Results<V, Options<V>>)
 			.catch(always(undefined))
