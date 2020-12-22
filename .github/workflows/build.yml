@@ -17,6 +17,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: cache deps
+        uses: actions/cache@main
+        with:
+          path: |
+            node_modules
+            */*/*/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: install deps
         run: yarn
 
@@ -25,3 +35,36 @@ jobs:
 
       - name: test
         run: yarn test
+
+  deploy:
+    needs: build
+    if: ${{ github.event_name != 'pull_request' && contains(github.ref, 'main') }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: cache deps
+        uses: actions/cache@main
+        with:
+          path: |
+            node_modules
+            */*/*/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Build
+        run: yarn allFunctions
+
+      - name: Login via Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Functions
+        uses: Azure/functions-action@v1
+        id: fa
+        with:
+          app-name: khaos-functions
