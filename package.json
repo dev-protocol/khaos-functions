@@ -1,10 +1,21 @@
 {
-	"name": "template-repos-ts-functions",
-	"version": "1.0.0",
-	"description": "",
+	"name": "@devprotocol/khaos-functions",
+	"version": "0.0.0",
+	"description": "Run functions from IPFS",
+	"main": "dist/cjs/libs/index.js",
+	"module": "dist/libs/index.js",
+	"files": [
+		"dist/libs",
+		"dist/v0",
+		"dist/cjs/libs",
+		"dist/cjs/v0",
+		"!**/*.test.*"
+	],
 	"scripts": {
 		"test": "ava",
-		"build": "tsc",
+		"build": "yarn build:ts && yarn build:cjs",
+		"build:ts": "tsc",
+		"build:cjs": "tsc --project . --module commonjs --outDir ./dist/cjs",
 		"watch": "tsc -w",
 		"start": "func start",
 		"pretest": "yarn build",
@@ -13,7 +24,8 @@
 		"allFunctions": "yarn build && node ./dist/scripts/callGetAllFunctions.js",
 		"lint": "yarn lint:eslint && yarn lint:format",
 		"lint:eslint": "eslint . --ext .ts,.js --fix",
-		"lint:format": "prettier --write '**/*.{js,json,md,yml}'"
+		"lint:format": "prettier --write '**/*.{js,json,md,yml}'",
+		"prepack": "yarn test && yarn build"
 	},
 	"dependencies": {
 		"@azure/functions": "1.2.2",
@@ -68,5 +80,16 @@
 		"hooks": {
 			"pre-commit": "yarn lint"
 		}
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dev-protocol/khaos-functions.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/dev-protocol/khaos-functions/issues"
+	},
+	"homepage": "https://github.com/dev-protocol/khaos-functions#readme"
 }
