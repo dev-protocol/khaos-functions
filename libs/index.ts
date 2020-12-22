@@ -4,18 +4,18 @@ import { always } from 'ramda'
 import { V0Options, V0Results } from '../v0'
 
 type Options<V> = V extends 'v0' ? V0Options : never
-type Results<V> = V extends 'v0' ? V0Results : never
+type Results<V, O extends Options<V>> = V extends 'v0' ? V0Results<O> : never
 
-export const call = <V extends 'v0'>(
+export const call = <V extends 'v0', O extends Options<V>>(
 	version = 'v0'
-): ((options: Options<V>) => Promise<UndefinedOr<Results<V>>>) => {
+): ((options: O) => Promise<UndefinedOr<Results<V, O>>>) => {
 	const fetcher = bent(
 		'https://khaos-functions.azurewebsites.net',
 		'POST',
 		'json'
 	)
-	return (options: Options<V>) =>
+	return <O>(options: O) =>
 		fetcher(`/${version}`, options)
-			.then((r) => (r as unknown) as Results<V>)
+			.then((r) => (r as unknown) as Results<V, Options<V>>)
 			.catch(always(undefined))
 }

@@ -6,7 +6,7 @@ import {
 } from '@devprotocol/khaos-core/types'
 import { whenDefined } from '@devprotocol/util-ts/cjs/utils'
 import { AsyncReturnType, Merge, SetOptional } from 'type-fest'
-import { callFunctions } from './callFunctions'
+import { CallFunctions, callFunctions } from './callFunctions'
 import { importFunctions } from './importFunctions'
 
 export type Base = SetOptional<{
@@ -52,7 +52,9 @@ export type V0Options =
 	| AuthorizeOptions
 	| OraclizeOptions
 
-export type V0Results = { readonly data: AsyncReturnType<typeof callFunctions> }
+export type V0Results<O extends V0Options> = {
+	readonly data: AsyncReturnType<CallFunctions<O>>
+}
 
 const httpTrigger: AzureFunction = async (
 	context: Context,
@@ -65,7 +67,7 @@ const httpTrigger: AzureFunction = async (
 	const data = await whenDefined(funtions, (f) =>
 		callFunctions(f, { id, ...props })
 	)
-	const body: V0Results = { data }
+	const body: V0Results<V0Options> = { data }
 
 	return {
 		status: 200,

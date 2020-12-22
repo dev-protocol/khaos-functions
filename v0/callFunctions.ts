@@ -19,7 +19,26 @@ const isAuthorize = (opts: V0Options): opts is AuthorizeOptions =>
 const isOraclize = (opts: V0Options): opts is OraclizeOptions =>
 	opts.method === 'oraclize'
 
-export const callFunctions = async <T extends V0Options>(
+export type CallFunctions<T extends V0Options> = (
+	f: Functions,
+	options: T
+) => Promise<
+	UndefinedOr<
+		T extends AbiOptions
+			? Functions['abi']
+			: T extends AddressesOptions
+			? AsyncReturnType<Functions['addresses']>
+			: T extends AuthorizeOptions
+			? AsyncReturnType<Functions['authorize']>
+			: T extends OraclizeOptions
+			? AsyncReturnType<Functions['oraclize']>
+			: never
+	>
+>
+
+export const callFunctions: CallFunctions<V0Options> = async <
+	T extends V0Options
+>(
 	f: Functions,
 	options: T
 ): Promise<
