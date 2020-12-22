@@ -6,15 +6,17 @@ import { V0Options, V0Results } from '../v0'
 type Options<V> = V extends 'v0' ? V0Options : never
 type Results<V, O extends Options<V>> = V extends 'v0' ? V0Results<O> : never
 
-export const call = <V extends 'v0', O extends Options<V>>(
+export const call = <V extends 'v0'>(
 	version = 'v0'
-): ((options: O) => Promise<UndefinedOr<Results<V, O>>>) => {
+): (<O extends Options<V>>(
+	options: O
+) => Promise<UndefinedOr<Results<V, O>>>) => {
 	const fetcher = bent(
 		'https://khaos-functions.azurewebsites.net',
 		'POST',
 		'json'
 	)
-	return (options: O) =>
+	return <O extends Options<V>>(options: O) =>
 		fetcher(`/${version}`, options)
 			.then((r) => (r as unknown) as Results<V, Options<V>>)
 			.catch(always(undefined))
