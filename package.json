@@ -1,6 +1,6 @@
 {
 	"name": "@devprotocol/khaos-functions",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Run functions from IPFS",
 	"main": "dist/cjs/libs/index.js",
 	"module": "dist/libs/index.js",
