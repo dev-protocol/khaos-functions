@@ -5,7 +5,7 @@ import {
 	FunctionOraclizerOptions,
 } from '@devprotocol/khaos-core/types'
 import { whenDefined } from '@devprotocol/util-ts/cjs/utils'
-import { Merge, SetOptional } from 'type-fest'
+import { AsyncReturnType, Merge, SetOptional } from 'type-fest'
 import { callFunctions } from './callFunctions'
 import { importFunctions } from './importFunctions'
 
@@ -46,27 +46,30 @@ export type OraclizeOptions = Merge<
 	}>
 >
 
-export type CallingOptions =
+export type V0Options =
 	| AbiOptions
 	| AddressesOptions
 	| AuthorizeOptions
 	| OraclizeOptions
 
+export type V0Results = { readonly data: AsyncReturnType<typeof callFunctions> }
+
 const httpTrigger: AzureFunction = async (
 	context: Context,
 	req: HttpRequest
 ): Promise<ReturnTypeOfAzureFunctions> => {
-	const { body } = req
-	const { id, ...props } = body as CallingOptions
+	const { body: reqBody } = req
+	const { id, ...props } = reqBody as V0Options
 
 	const funtions = await whenDefined(id, (x) => importFunctions(x))
 	const data = await whenDefined(funtions, (f) =>
 		callFunctions(f, { id, ...props })
 	)
+	const body: V0Results = { data }
 
 	return {
 		status: 200,
-		body: { data },
+		body,
 	}
 }
 

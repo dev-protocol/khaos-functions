@@ -4,34 +4,36 @@ import {
 	AbiOptions,
 	AddressesOptions,
 	AuthorizeOptions,
-	CallingOptions,
+	V0Options,
 	OraclizeOptions,
 } from '.'
 import { always, cond, isNil } from 'ramda'
 import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts/cjs/utils'
+import { AsyncReturnType } from 'type-fest'
 
-const isAbi = (opts: CallingOptions): opts is AbiOptions =>
-	opts.method === 'abi'
-const isAddresses = (opts: CallingOptions): opts is AddressesOptions =>
+const isAbi = (opts: V0Options): opts is AbiOptions => opts.method === 'abi'
+const isAddresses = (opts: V0Options): opts is AddressesOptions =>
 	opts.method === 'addresses'
-const isAuthorize = (opts: CallingOptions): opts is AuthorizeOptions =>
+const isAuthorize = (opts: V0Options): opts is AuthorizeOptions =>
 	opts.method === 'authorize'
-const isOraclize = (opts: CallingOptions): opts is OraclizeOptions =>
+const isOraclize = (opts: V0Options): opts is OraclizeOptions =>
 	opts.method === 'oraclize'
 
-export const callFunctions = <T extends CallingOptions>(
+export const callFunctions = async <T extends V0Options>(
 	f: Functions,
 	options: T
-): UndefinedOr<
-	T extends AbiOptions
-		? Functions['abi']
-		: T extends AddressesOptions
-		? ReturnType<Functions['addresses']>
-		: T extends AuthorizeOptions
-		? ReturnType<Functions['authorize']>
-		: T extends OraclizeOptions
-		? ReturnType<Functions['oraclize']>
-		: never
+): Promise<
+	UndefinedOr<
+		T extends AbiOptions
+			? Functions['abi']
+			: T extends AddressesOptions
+			? AsyncReturnType<Functions['addresses']>
+			: T extends AuthorizeOptions
+			? AsyncReturnType<Functions['authorize']>
+			: T extends OraclizeOptions
+			? AsyncReturnType<Functions['oraclize']>
+			: never
+	>
 > =>
 	cond([
 		[isNil, always(undefined)],

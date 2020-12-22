@@ -1,7 +1,7 @@
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable functional/no-let */
 import test from 'ava'
-import func, { CallingOptions } from './index'
+import func, { V0Options } from './index'
 import * as importFunctions from './importFunctions'
 import * as callFunctions from './callFunctions'
 import { stub, SinonStub, spy, SinonSpy } from 'sinon'
@@ -14,7 +14,7 @@ let importFunctionsStub: SinonStub<
 	ReturnType<typeof importFunctions['importFunctions']>
 >
 let callFunctionsSpy: SinonSpy<
-	[Functions, CallingOptions],
+	[Functions, V0Options],
 	ReturnType<typeof callFunctions['callFunctions']>
 >
 const importFunctionsSpy = spy(() => Promise.resolve(example))
