@@ -18,6 +18,6 @@ export const call = <V extends 'v0'>(
 	)
 	return <O extends Options<V>>(options: O) =>
 		fetcher(`/${version}`, options)
-			.then((r) => (r as unknown) as Results<V, Options<V>>)
+			.then((r) => (r as unknown) as Results<V, O>)
 			.catch(always(undefined))
 }
