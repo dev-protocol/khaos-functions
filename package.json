@@ -24,7 +24,7 @@
 		"pretest": "yarn build:ts",
 		"prebuild": "rimraf dist",
 		"prestart": "yarn build",
-		"allFunctions": "yarn build && node ./dist/scripts/callGetAllFunctions.js",
+		"snap": "yarn build && node ./dist/scripts/callGetAllFunctions.js",
 		"lint": "yarn lint:eslint && yarn lint:format",
 		"lint:eslint": "eslint . --ext .ts,.js --fix",
 		"lint:format": "prettier --write '**/*.{js,json,md,yml}'",
