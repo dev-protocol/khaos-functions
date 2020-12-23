@@ -1,6 +1,11 @@
 name: CI
 
-on: [push, repository_dispatch]
+on:
+  push:
+    branches:
+      - '**'
+  repository_dispatch:
+    types: [update]
 
 jobs:
   build:
