@@ -13,6 +13,7 @@
 		"import": "./dist/index.mjs",
 		"require": "./dist/index.js"
 	},
+	"types": "./dist/khaos-functions.d.ts",
 	"scripts": {
 		"test": "ava",
 		"build": "yarn build:ts && yarn build:rollup",
