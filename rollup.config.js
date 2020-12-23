@@ -14,7 +14,7 @@ export default [
 				format: 'cjs',
 			},
 		],
-		plugins: [typescript()],
+		plugins: [typescript({ module: 'esnext' })],
 	},
 	{
 		input: 'dist/libs/index.d.ts',
