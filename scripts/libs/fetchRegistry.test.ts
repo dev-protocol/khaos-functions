@@ -8,7 +8,7 @@ import https from 'https'
 const get = async () =>
 	new Promise((resolve) => {
 		const req = https.request(
-			'https://raw.githubusercontent.com/dev-protocol/khaos-registry/main/map/functions.json',
+			`https://raw.githubusercontent.com/dev-protocol/khaos-registry/main/map/functions.json?${Math.random()}`,
 			(res) => {
 				const data: any[] | Uint8Array[] = []
 				res.on('data', (chunk) => {

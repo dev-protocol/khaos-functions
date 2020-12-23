@@ -1,6 +1,5 @@
 import test from 'ava'
-import { stub } from 'sinon'
-import * as fetchRegistry from '../scripts/libs/fetchRegistry'
+import { fetchRegistry } from '../scripts/libs/fetchRegistry'
 import { call, ids } from './index'
 
 test('Returns results of v0 by default', async (t) => {
@@ -19,19 +18,7 @@ test('Returns undefined when the passed version is not found', async (t) => {
 })
 
 test('Returns registry', async (t) => {
-	stub(fetchRegistry, 'fetchRegistry').callsFake(() =>
-		Promise.resolve([
-			{
-				id: 'example',
-				ipfs: 'QmPGof4vrGsfw61S2s6yZ5QpFgiYzR1w53acAdnx1KSNF7',
-			},
-		])
-	)
+	const expected = await fetchRegistry()
 	const res = await ids()
-	t.deepEqual(res, [
-		{
-			id: 'example',
-			ipfs: 'QmPGof4vrGsfw61S2s6yZ5QpFgiYzR1w53acAdnx1KSNF7',
-		},
-	])
+	t.deepEqual(res, expected)
 })

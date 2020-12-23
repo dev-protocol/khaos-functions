@@ -12,7 +12,8 @@ type Registry = readonly [
 ]
 
 export const fetchRegistry = always(
-	(async (fetcher) => fetcher(URL).then((r) => (r as unknown) as Registry))(
+	(async (fetcher) =>
+		fetcher(`${URL}?${Math.random()}`).then((r) => (r as unknown) as Registry))(
 		bent('json')
 	)
 )
