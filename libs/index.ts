@@ -2,7 +2,7 @@ import { UndefinedOr } from '@devprotocol/util-ts/cjs/types'
 import bent from 'bent'
 import { always } from 'ramda'
 import { fetchRegistry } from '../scripts/libs/fetchRegistry'
-import { V0Options, V0Results } from '../v0'
+import { V0Options, V0Results } from '../v0/types'
 
 type Options<V> = V extends 'v0' ? V0Options : never
 type Results<V, O extends Options<V>> = V extends 'v0' ? V0Results<O> : never

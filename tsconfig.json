@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"module": "UMD",
+		"module": "ESNext",
 		"moduleResolution": "Node",
 		"target": "es6",
 		"outDir": "dist",

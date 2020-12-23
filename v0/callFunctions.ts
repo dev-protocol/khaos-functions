@@ -1,8 +1,4 @@
-import {
-	Abi,
-	FunctionOraclizeResults,
-	Functions,
-} from '@devprotocol/khaos-core/types'
+import { Functions } from '@devprotocol/khaos-core/types'
 import { UndefinedOr } from '@devprotocol/util-ts/cjs/types'
 import {
 	AbiOptions,
@@ -10,7 +6,8 @@ import {
 	AuthorizeOptions,
 	V0Options,
 	OraclizeOptions,
-} from '.'
+	CallFunctions,
+} from './types'
 import { always, cond, isNil } from 'ramda'
 import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts/cjs/utils'
 import { AsyncReturnType } from 'type-fest'
@@ -22,23 +19,6 @@ const isAuthorize = (opts: V0Options): opts is AuthorizeOptions =>
 	opts.method === 'authorize'
 const isOraclize = (opts: V0Options): opts is OraclizeOptions =>
 	opts.method === 'oraclize'
-
-export type CallFunctions<T extends V0Options> = (
-	f: Functions,
-	options: T
-) => Promise<
-	UndefinedOr<
-		T extends AbiOptions
-			? Abi
-			: T extends AddressesOptions
-			? string
-			: T extends AuthorizeOptions
-			? boolean
-			: T extends OraclizeOptions
-			? FunctionOraclizeResults
-			: never
-	>
->
 
 export const callFunctions: CallFunctions<V0Options> = async <
 	T extends V0Options

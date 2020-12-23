@@ -1,7 +1,8 @@
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable functional/no-let */
 import test from 'ava'
-import func, { V0Options } from './index'
+import func from './index'
+import { V0Options } from './types'
 import * as importFunctions from './importFunctions'
 import * as callFunctions from './callFunctions'
 import { stub, SinonStub, spy, SinonSpy } from 'sinon'
