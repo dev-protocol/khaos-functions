@@ -3,7 +3,9 @@
 	"version": "0.2.1",
 	"description": "Run functions from IPFS",
 	"files": [
-		"dist/*",
+		"dist/*.mjs",
+		"dist/*.js",
+		"dist/*.ts",
 		"!**/*.test.*"
 	],
 	"main": "./dist/index.js",
