@@ -1,5 +1,5 @@
 import { AzureFunction, Context, HttpRequest } from '@azure/functions'
-import { whenDefined } from '@devprotocol/util-ts/cjs/utils'
+import { whenDefined } from '@devprotocol/util-ts'
 import { V0Options, V0Results } from './types'
 import { callFunctions } from './callFunctions'
 import { importFunctions } from './importFunctions'

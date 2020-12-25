@@ -1,4 +1,4 @@
-import { UndefinedOr } from '@devprotocol/util-ts/cjs/types'
+import { UndefinedOr } from '@devprotocol/util-ts'
 import bent from 'bent'
 import { always } from 'ramda'
 import { fetchRegistry } from '../scripts/libs/fetchRegistry'

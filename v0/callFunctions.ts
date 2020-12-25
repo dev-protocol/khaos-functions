@@ -1,5 +1,5 @@
 import { Functions } from '@devprotocol/khaos-core/types'
-import { UndefinedOr } from '@devprotocol/util-ts/cjs/types'
+import { UndefinedOr, whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
 import {
 	AbiOptions,
 	AddressesOptions,
@@ -9,7 +9,6 @@ import {
 	CallFunctions,
 } from './types'
 import { always, cond, isNil } from 'ramda'
-import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts/cjs/utils'
 import { AsyncReturnType } from 'type-fest'
 
 const isAbi = (opts: V0Options): opts is AbiOptions => opts.method === 'abi'

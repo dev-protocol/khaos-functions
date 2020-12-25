@@ -8,7 +8,7 @@ import pQueue from 'p-queue'
 import { createIpfs } from './libs/createIpfs'
 import { ipfsLs } from './libs/ipfsLs'
 import { ipfsGet } from './libs/ipfsGet'
-import { whenDefined } from '@devprotocol/util-ts/cjs/utils'
+import { whenDefined } from '@devprotocol/util-ts'
 import { join } from 'path'
 
 export const getAllFunctions = async () => {

@@ -6,7 +6,7 @@ import {
 	FunctionOraclizerOptions,
 	Functions,
 } from '@devprotocol/khaos-core/types'
-import { UndefinedOr } from '@devprotocol/util-ts/cjs/types'
+import { UndefinedOr } from '@devprotocol/util-ts'
 import { AsyncReturnType, Merge, SetOptional } from 'type-fest'
 
 export type CallFunctions<T extends V0Options> = (
