@@ -1,6 +1,6 @@
 {
 	"name": "@devprotocol/khaos-functions",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "Run functions from IPFS",
 	"files": [
 		"dist/*.mjs",
