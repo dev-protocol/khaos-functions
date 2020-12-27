@@ -1,4 +1,4 @@
-import { Functions } from '@devprotocol/khaos-core/types'
+import { Functions } from '@devprotocol/khaos-core'
 import { UndefinedOr, whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
 import {
 	AbiOptions,

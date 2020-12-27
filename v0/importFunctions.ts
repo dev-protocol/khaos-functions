@@ -1,4 +1,4 @@
-import { Functions } from '@devprotocol/khaos-core/types'
+import { Functions } from '@devprotocol/khaos-core'
 import { UndefinedOr } from '@devprotocol/util-ts'
 import { always } from 'ramda'
 

@@ -1,4 +1,4 @@
-import { Functions } from '@devprotocol/khaos-core/types'
+import { Functions } from '@devprotocol/khaos-core'
 import { always } from 'ramda'
 
 const { abi, addresses, authorize, oraclize } = {

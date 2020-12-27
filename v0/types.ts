@@ -5,7 +5,7 @@ import {
 	FunctionOraclizeResults,
 	FunctionOraclizerOptions,
 	Functions,
-} from '@devprotocol/khaos-core/types'
+} from '@devprotocol/khaos-core'
 import { UndefinedOr } from '@devprotocol/util-ts'
 import { AsyncReturnType, Merge, SetOptional } from 'type-fest'
 

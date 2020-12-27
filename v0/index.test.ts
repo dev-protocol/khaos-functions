@@ -8,7 +8,7 @@ import * as callFunctions from './callFunctions'
 import { stub, SinonStub, spy, SinonSpy } from 'sinon'
 import * as example from '../functions/example'
 import { Context } from '@azure/functions'
-import { Functions } from '@devprotocol/khaos-core/types'
+import { Functions } from '@devprotocol/khaos-core'
 
 let importFunctionsStub: SinonStub<
 	[id: string],
