@@ -60,10 +60,10 @@
     jsonwebtoken "^8.5.1"
     ramda "^0.27.1"
 
-"@devprotocol/util-ts@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@devprotocol/util-ts/-/util-ts-2.0.1.tgz#e78f9037bd227da24e2e250fe4491e2f0f30d37c"
-  integrity sha512-d/rPhPX4P1nRgM26B71OthcVsFPvkFedan1m9HKjTsDjr+k6x/HjKuHzSvozpOPH8kYsLUNMpdAx5mU4xY4Tzw==
+"@devprotocol/util-ts@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@devprotocol/util-ts/-/util-ts-2.1.0.tgz#e0e5cc95b3c3b85985002970926d7271f5bfa352"
+  integrity sha512-ZcCj8K2oBhZ1BVV7oXMF4MpiwQVOcTY1J/HZtroH/b9arV2YddIKBlZSB4TdcIK9x6HsxWY1kAIZ1Lz350XIrA==
   dependencies:
     bent "7.3.12"
     ethereum-waffle "3.2.1"
