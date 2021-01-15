@@ -3,8 +3,8 @@ import { createIpfs } from './createIpfs'
 import ipfsHttpClient from 'ipfs-http-client'
 const ipfs = ipfsHttpClient({
 	host: 'ipfs.io',
-	port: 443,
-	protocol: 'https',
+	port: 80,
+	protocol: 'http',
 })
 
 test('Returns IPFS client', (t) => {

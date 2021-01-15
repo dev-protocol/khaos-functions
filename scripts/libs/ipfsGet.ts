@@ -1,4 +1,4 @@
-/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/no-conditional-statement */
 /* eslint-disable functional/no-loop-statement */
 import ipfsHttpClient from 'ipfs-http-client'
 import BufferList from 'bl'
@@ -8,11 +8,13 @@ export const ipfsGet = (ipfs: ReturnType<typeof ipfsHttpClient>) => async (
 	cid: string
 ): Promise<string | undefined> =>
 	(async (iterater) => {
-		const content = new BufferList()
-		for await (const file of iterater) {
-			for await (const chunk of file.content) {
-				content.append(chunk)
+		for await (const data of iterater) {
+			const content = new BufferList()
+			if (data.type === 'file' && data.content) {
+				for await (const chunk of data.content) {
+					content.append(Buffer.from(chunk))
+				}
 			}
+			return content.length ? content.toString() : undefined
 		}
-		return content.toString()
 	})(ipfs.get(cid)).catch(always(undefined))
