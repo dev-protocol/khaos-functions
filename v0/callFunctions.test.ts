@@ -46,6 +46,32 @@ test('Calls `oraclize` when the passed options.method is "oraclize"', async (t) 
 	})
 })
 
+test('Calls `event` when the passed options.method is "event"', async (t) => {
+	const res = await callFunctions(example, {
+		id: '',
+		method: 'event',
+		options: {
+			network: 'mainnet',
+		},
+	})
+	t.is(res, 'Query')
+})
+
+test('Calls `pack` when the passed options.method is "pack"', async (t) => {
+	const res = await callFunctions(example, {
+		id: '',
+		method: 'pack',
+		options: {
+			results: {
+				message: 'message',
+				status: 1,
+				statusMessage: 'statusMessage',
+			},
+		},
+	})
+	t.deepEqual(res, { name: 'callback', args: [1] })
+})
+
 test('Returns undefined when the passed options.method is "addresses" but options.options is not passed', async (t) => {
 	t.is(
 		await callFunctions(example, {
@@ -167,6 +193,46 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 		await callFunctions(example, {
 			id: '',
 			method: 'oraclize',
+		}),
+		undefined
+	)
+})
+
+test('Returns undefined when the passed options.method is "event" but options.options is not passed', async (t) => {
+	t.is(
+		await callFunctions(example, {
+			id: '',
+			method: 'event',
+			options: {
+				network: undefined,
+			},
+		}),
+		undefined
+	)
+	t.is(
+		await callFunctions(example, {
+			id: '',
+			method: 'event',
+		}),
+		undefined
+	)
+})
+
+test('Returns undefined when the passed options.method is "pack" but options.options is not passed', async (t) => {
+	t.is(
+		await callFunctions(example, {
+			id: '',
+			method: 'pack',
+			options: {
+				results: undefined,
+			},
+		}),
+		undefined
+	)
+	t.is(
+		await callFunctions(example, {
+			id: '',
+			method: 'pack',
 		}),
 		undefined
 	)

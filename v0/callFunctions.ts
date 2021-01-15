@@ -7,6 +7,8 @@ import {
 	V0Options,
 	OraclizeOptions,
 	CallFunctions,
+	EventOptions,
+	PackOptions,
 } from './types'
 import { always, cond, isNil } from 'ramda'
 import { AsyncReturnType } from 'type-fest'
@@ -18,6 +20,9 @@ const isAuthorize = (opts: V0Options): opts is AuthorizeOptions =>
 	opts.method === 'authorize'
 const isOraclize = (opts: V0Options): opts is OraclizeOptions =>
 	opts.method === 'oraclize'
+const isEvent = (opts: V0Options): opts is EventOptions =>
+	opts.method === 'event'
+const isPack = (opts: V0Options): opts is PackOptions => opts.method === 'pack'
 
 export const callFunctions: CallFunctions<V0Options> = async <
 	T extends V0Options
@@ -34,6 +39,10 @@ export const callFunctions: CallFunctions<V0Options> = async <
 			? AsyncReturnType<Functions['authorize']>
 			: T extends OraclizeOptions
 			? AsyncReturnType<Functions['oraclize']>
+			: T extends EventOptions
+			? AsyncReturnType<Functions['event']>
+			: T extends PackOptions
+			? AsyncReturnType<Functions['pack']>
 			: never
 	>
 > =>
@@ -77,6 +86,24 @@ export const callFunctions: CallFunctions<V0Options> = async <
 						([signatureOptions, query, network]) =>
 							f.oraclize({ signatureOptions, query, network })
 					))(options as OraclizeOptions)
+			),
+		],
+		[
+			isEvent,
+			always(
+				((opts) =>
+					whenDefined(opts?.options?.network, (network) =>
+						f.event({ network })
+					))(options as EventOptions)
+			),
+		],
+		[
+			isPack,
+			always(
+				((opts) =>
+					whenDefined(opts?.options?.results, (results) =>
+						f.pack({ results })
+					))(options as PackOptions)
 			),
 		],
 	])(options)
