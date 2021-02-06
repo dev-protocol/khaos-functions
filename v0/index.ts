@@ -10,8 +10,6 @@ const httpTrigger: AzureFunction = async (
 ): Promise<ReturnTypeOfAzureFunctions> => {
 	const { body: reqBody } = req
 	const { id, ...props } = reqBody as V0Options
-	// eslint-disable-next-line functional/no-expression-statement
-	console.log({ reqBody })
 
 	const funtions = await whenDefined(id, (x) => importFunctions(x))
 	const data = await whenDefined(funtions, (f) =>
