@@ -1,3 +1,4 @@
+import multi from '@rollup/plugin-multi-entry'
 import typescript from '@rollup/plugin-typescript'
 import dts from 'rollup-plugin-dts'
 
@@ -17,8 +18,8 @@ export default [
 		plugins: [typescript({ module: 'esnext' })],
 	},
 	{
-		input: 'dist/libs/index.d.ts',
+		input: ['dist/libs/index.d.ts', 'dist/v0/types.d.ts'],
 		output: [{ file: 'dist/khaos-functions.d.ts', format: 'es' }],
-		plugins: [dts()],
+		plugins: [multi(), dts()],
 	},
 ]

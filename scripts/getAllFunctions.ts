@@ -13,6 +13,7 @@ import { join } from 'path'
 
 export const getAllFunctions = async () => {
 	const registry = await fetchRegistry()
+	console.log({ registry })
 	const ipfs = createIpfs()
 	const ls = ipfsLs(ipfs)
 	const get = ipfsGet(ipfs)
@@ -22,8 +23,10 @@ export const getAllFunctions = async () => {
 		return queue.addAll(
 			files.map((file) => async () => {
 				const code = await get(file.cid)
+				// console.log({ code, id: file.cid })
 				const path = file.path.replace(cid, '').split('/')
 				const joined = join(__dirname, '..', 'functions', id, ...path)
+				console.log({ joined })
 				return whenDefined(code, async (c) => outputFile(joined, c))
 			})
 		)
