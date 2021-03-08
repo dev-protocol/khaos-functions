@@ -831,10 +831,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/bl@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@types/bl/-/bl-2.1.0.tgz#45c881c97feae1223d63bbc5b83166153fcb2a15"
-  integrity sha512-1TdA9IXOy4sdqn8vgieQ6GZAiHiPNrOiO1s2GJjuYPw4QVY7gYoVjkW049avj33Ez7IcIvu43hQsMsoUFbCn2g==
+"@types/bl@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@types/bl/-/bl-4.1.0.tgz#fadef609edc9be15e7941aa61bf309df3dc9b135"
+  integrity sha512-fLthIdXgivtEy4kQ1MY6qzpqE5YJdJ4KjI5TEaLLqyCwt9IGVVY5WTx19uikJQOMERflIiGT75nkwB7CixBfXg==
   dependencies:
     "@types/node" "*"
 
