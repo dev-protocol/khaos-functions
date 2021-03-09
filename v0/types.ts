@@ -33,58 +33,75 @@ export type CallFunctions<T extends V0Options> = (
 	>
 >
 
-export type Base = SetOptional<{
+export type IBase = {
 	readonly id: string
 	readonly method: string
 	readonly options: never
-}>
+}
 
-export type AbiOptions = Merge<
-	Base,
-	SetOptional<{
-		readonly method: 'abi'
-	}>
->
+export type Base = SetOptional<IBase, keyof IBase>
+
+export type IAbi = {
+	readonly method: 'abi'
+}
+
+export type AbiOptions = Merge<Base, SetOptional<IAbi, keyof IAbi>>
+
+export type IAddresses = {
+	readonly method: 'addresses'
+	readonly options: SetOptional<
+		FunctionAddressesOptions,
+		keyof FunctionAddressesOptions
+	>
+}
 
 export type AddressesOptions = Merge<
 	Base,
-	SetOptional<{
-		readonly method: 'addresses'
-		readonly options: SetOptional<FunctionAddressesOptions>
-	}>
+	SetOptional<IAddresses, keyof IAddresses>
 >
+
+export type IAuthorize = {
+	readonly method: 'authorize'
+	readonly options: SetOptional<
+		FunctionAuthorizerOptions,
+		keyof FunctionAuthorizerOptions
+	>
+}
 
 export type AuthorizeOptions = Merge<
 	Base,
-	SetOptional<{
-		readonly method: 'authorize'
-		readonly options: SetOptional<FunctionAuthorizerOptions>
-	}>
+	SetOptional<IAuthorize, keyof IAuthorize>
 >
+
+export type IOraclize = {
+	readonly method: 'oraclize'
+	readonly options: SetOptional<
+		FunctionOraclizerOptions,
+		keyof FunctionOraclizerOptions
+	>
+}
 
 export type OraclizeOptions = Merge<
 	Base,
-	SetOptional<{
-		readonly method: 'oraclize'
-		readonly options: SetOptional<FunctionOraclizerOptions>
-	}>
+	SetOptional<IOraclize, keyof IOraclize>
 >
 
-export type EventOptions = Merge<
-	Base,
-	SetOptional<{
-		readonly method: 'event'
-		readonly options: SetOptional<FunctionEventOptions>
-	}>
->
+export type IEvent = {
+	readonly method: 'event'
+	readonly options: SetOptional<
+		FunctionEventOptions,
+		keyof FunctionEventOptions
+	>
+}
 
-export type PackOptions = Merge<
-	Base,
-	SetOptional<{
-		readonly method: 'pack'
-		readonly options: SetOptional<FunctionPackOptions>
-	}>
->
+export type EventOptions = Merge<Base, SetOptional<IEvent, keyof IEvent>>
+
+export type IPack = {
+	readonly method: 'pack'
+	readonly options: SetOptional<FunctionPackOptions, keyof FunctionPackOptions>
+}
+
+export type PackOptions = Merge<Base, SetOptional<IPack, keyof IPack>>
 
 export type V0Options =
 	| AbiOptions
