@@ -27,7 +27,7 @@
 		"snap": "yarn build && node ./dist/scripts/callGetAllFunctions.js",
 		"lint": "yarn lint:eslint && yarn lint:format",
 		"lint:eslint": "eslint . --ext .ts,.js --fix",
-		"lint:format": "prettier --write '**/*.{js,json,md,yml}'",
+		"lint:format": "prettier --write '**/*.{ts,js,json,md,yml}'",
 		"prepack": "yarn test && yarn build"
 	},
 	"dependencies": {
@@ -55,9 +55,8 @@
 		"bl": "4.1.0",
 		"dotenv": "8.2.0",
 		"eslint": "7.21.0",
-		"eslint-config-prettier": "6.15.0",
+		"eslint-config-prettier": "8.1.0",
 		"eslint-plugin-functional": "3.1.0",
-		"eslint-plugin-prettier": "3.3.1",
 		"esm": "3.2.25",
 		"fs-extra": "9.1.0",
 		"husky": "5.1.3",
