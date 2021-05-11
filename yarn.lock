@@ -1020,10 +1020,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/bl@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@types/bl/-/bl-5.0.0.tgz#87c4dd4f66416b05d5b9d25a76be815c02be8122"
-  integrity sha512-IcJhpsGOcw+5+SUau19q1c1Zb410Z7vy6I3/NCFnQrxNCwQYMDoR4cdMT3w1vTDYV6woEmmWVCnbntMq7KTtyA==
+"@types/bl@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@types/bl/-/bl-5.0.1.tgz#72e61e17bf2c4b0e1a87621c6505c34ac41fd9e3"
+  integrity sha512-hcjx0OAaT82pFU0bN2f6k4n6nyyIKsTe9PuXtY1zkANNPbUmJJmTtt98UebGHZuPwll7atG3UPXxYJ634cnLqg==
   dependencies:
     "@types/node" "*"
     "@types/readable-stream" "*"
