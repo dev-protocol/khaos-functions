@@ -13,7 +13,7 @@ test('Returns data from IPFS', async (t) => {
 test('Returns undefined when the passed CID is not file', async (t) => {
 	const ipfs = createIpfs()
 	const res = await ipfsGet(ipfs)(
-		'QmPGof4vrGsfw61S2s6yZ5QpFgiYzR1w53acAdnx1KSNF7'
+		'QmcbW9PwXLRFbSdfYqekdtBfL1CYK6jzrfJw1vrP9prs6k'
 	)
 	t.is(res, undefined)
 })
