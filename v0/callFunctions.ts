@@ -1,3 +1,4 @@
+import { Context } from '@azure/functions'
 import { Functions } from '@devprotocol/khaos-core'
 import { UndefinedOr, whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
 import {
@@ -28,6 +29,7 @@ export const callFunctions: CallFunctions<V0Options> = async <
 	T extends V0Options
 >(
 	f: Functions,
+	context: Context,
 	options: T
 ): Promise<
 	UndefinedOr<
@@ -69,7 +71,7 @@ export const callFunctions: CallFunctions<V0Options> = async <
 			always(
 				whenDefined(
 					(options as AddressesOptions)?.options?.network,
-					(network) => f.addresses({ network })
+					(network) => f.addresses({ network, context })
 				)
 			),
 		],

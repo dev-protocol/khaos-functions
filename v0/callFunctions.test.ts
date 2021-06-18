@@ -3,12 +3,12 @@ import { callFunctions } from './callFunctions'
 import * as example from '../functions/example'
 
 test('Returns `abi` when the passed options.method is "abi"', async (t) => {
-	const res = await callFunctions(example, { id: '', method: 'abi' } as any)
+	const res = await callFunctions(example, {} as any, { id: '', method: 'abi' } as any)
 	t.is(res, example.abi)
 })
 
 test('Calls `addresses` when the passed options.method is "addresses"', async (t) => {
-	const res = await callFunctions(example, {
+	const res = await callFunctions(example, {} as any, {
 		id: '',
 		method: 'addresses',
 		options: { network: 'mainnet' },
@@ -17,7 +17,7 @@ test('Calls `addresses` when the passed options.method is "addresses"', async (t
 })
 
 test('Calls `authorize` when the passed options.method is "authorize"', async (t) => {
-	const res = await callFunctions(example, {
+	const res = await callFunctions(example, {} as any, {
 		id: '',
 		method: 'authorize',
 		options: { message: '', secret: '', request: {} as any },
@@ -26,7 +26,7 @@ test('Calls `authorize` when the passed options.method is "authorize"', async (t
 })
 
 test('Calls `oraclize` when the passed options.method is "oraclize"', async (t) => {
-	const res = await callFunctions(example, {
+	const res = await callFunctions(example, {} as any, {
 		id: '',
 		method: 'oraclize',
 		options: {
@@ -47,7 +47,7 @@ test('Calls `oraclize` when the passed options.method is "oraclize"', async (t) 
 })
 
 test('Calls `event` when the passed options.method is "event"', async (t) => {
-	const res = await callFunctions(example, {
+	const res = await callFunctions(example, {} as any, {
 		id: '',
 		method: 'event',
 		options: {
@@ -58,7 +58,7 @@ test('Calls `event` when the passed options.method is "event"', async (t) => {
 })
 
 test('Calls `pack` when the passed options.method is "pack"', async (t) => {
-	const res = await callFunctions(example, {
+	const res = await callFunctions(example, {} as any, {
 		id: '',
 		method: 'pack',
 		options: {
@@ -74,7 +74,7 @@ test('Calls `pack` when the passed options.method is "pack"', async (t) => {
 
 test('Returns undefined when the passed options.method is "addresses" but options.options is not passed', async (t) => {
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'addresses',
 			options: { network: undefined },
@@ -82,7 +82,7 @@ test('Returns undefined when the passed options.method is "addresses" but option
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'addresses',
 		}),
@@ -92,7 +92,7 @@ test('Returns undefined when the passed options.method is "addresses" but option
 
 test('Returns undefined when the passed options.method is "authorize" but options.options is not passed', async (t) => {
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'authorize',
 			options: { message: '', secret: '', request: undefined },
@@ -100,7 +100,7 @@ test('Returns undefined when the passed options.method is "authorize" but option
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'authorize',
 			options: { message: '', secret: undefined, request: {} as any },
@@ -108,7 +108,7 @@ test('Returns undefined when the passed options.method is "authorize" but option
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'authorize',
 			options: { message: undefined, secret: '', request: {} as any },
@@ -116,7 +116,7 @@ test('Returns undefined when the passed options.method is "authorize" but option
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'authorize',
 			options: { message: undefined, secret: undefined, request: undefined },
@@ -124,7 +124,7 @@ test('Returns undefined when the passed options.method is "authorize" but option
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'authorize',
 		}),
@@ -134,7 +134,7 @@ test('Returns undefined when the passed options.method is "authorize" but option
 
 test('Returns undefined when the passed options.method is "oraclize" but options.options is not passed', async (t) => {
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'oraclize',
 			options: {
@@ -150,7 +150,7 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'oraclize',
 			options: {
@@ -162,7 +162,7 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'oraclize',
 			options: {
@@ -178,7 +178,7 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'oraclize',
 			options: {
@@ -190,7 +190,7 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'oraclize',
 		}),
@@ -200,7 +200,7 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 
 test('Returns undefined when the passed options.method is "event" but options.options is not passed', async (t) => {
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'event',
 			options: {
@@ -210,7 +210,7 @@ test('Returns undefined when the passed options.method is "event" but options.op
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'event',
 		}),
@@ -220,7 +220,7 @@ test('Returns undefined when the passed options.method is "event" but options.op
 
 test('Returns undefined when the passed options.method is "pack" but options.options is not passed', async (t) => {
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'pack',
 			options: {
@@ -230,7 +230,7 @@ test('Returns undefined when the passed options.method is "pack" but options.opt
 		undefined
 	)
 	t.is(
-		await callFunctions(example, {
+		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'pack',
 		}),

@@ -15,7 +15,7 @@ let importFunctionsStub: SinonStub<
 	ReturnType<typeof importFunctions['importFunctions']>
 >
 let callFunctionsSpy: SinonSpy<
-	[Functions, V0Options],
+	[Functions, Context, V0Options],
 	ReturnType<typeof callFunctions['callFunctions']>
 >
 const importFunctionsSpy = spy(() => Promise.resolve(example))
@@ -46,10 +46,10 @@ test.serial(
 	async (t) => {
 		const test = `${Math.random()}`
 		const expected = { id: 'example', test }
-		await func((undefined as unknown) as Context, {
+		await func({log: true} as any, {
 			body: expected,
 		})
-		t.deepEqual(callFunctionsSpy.getCall(0).args, [example, expected as any])
+		t.deepEqual(callFunctionsSpy.getCall(0).args, [example, {log: true}, expected as any])
 		t.is(callFunctionsSpy.callCount, 1)
 	}
 )
