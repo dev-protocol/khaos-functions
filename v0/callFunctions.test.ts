@@ -3,7 +3,11 @@ import { callFunctions } from './callFunctions'
 import * as example from '../functions/example'
 
 test('Returns `abi` when the passed options.method is "abi"', async (t) => {
-	const res = await callFunctions(example, {} as any, { id: '', method: 'abi' } as any)
+	const res = await callFunctions(
+		example,
+		{} as any,
+		{ id: '', method: 'abi' } as any
+	)
 	t.is(res, example.abi)
 })
 

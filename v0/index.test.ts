@@ -34,7 +34,7 @@ test.afterEach(() => {
 
 test.serial('Passes `id` in the request body to importFunctions', async (t) => {
 	const id = `${Math.random()}`
-	await func((undefined as unknown) as Context, {
+	await func(undefined as unknown as Context, {
 		body: { id },
 	})
 	t.deepEqual(importFunctionsSpy.getCall(0).args, [id])
@@ -46,16 +46,20 @@ test.serial(
 	async (t) => {
 		const test = `${Math.random()}`
 		const expected = { id: 'example', test }
-		await func({log: true} as any, {
+		await func({ log: true } as any, {
 			body: expected,
 		})
-		t.deepEqual(callFunctionsSpy.getCall(0).args, [example, {log: true}, expected as any])
+		t.deepEqual(callFunctionsSpy.getCall(0).args, [
+			example,
+			{ log: true },
+			expected as any,
+		])
 		t.is(callFunctionsSpy.callCount, 1)
 	}
 )
 
 test.serial('Returns object for Azure Functions', async (t) => {
-	const res = await func((undefined as unknown) as Context, {
+	const res = await func(undefined as unknown as Context, {
 		body: {
 			id: 'example',
 			method: 'addresses',
