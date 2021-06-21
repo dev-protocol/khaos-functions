@@ -28,7 +28,8 @@
 		"lint": "yarn lint:eslint && yarn lint:format",
 		"lint:eslint": "eslint . --ext .ts,.js --fix",
 		"lint:format": "prettier --write '**/*.{ts,js,json,md,yml}'",
-		"prepack": "yarn test && yarn build"
+		"prepack": "yarn test && yarn build",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"@azure/functions": "1.2.3",
@@ -59,7 +60,7 @@
 		"eslint-plugin-functional": "3.1.0",
 		"esm": "3.2.25",
 		"fs-extra": "10.0.0",
-		"husky": "6.0.0",
+		"husky": "^6.0.0",
 		"ipfs-http-client": "49.0.4",
 		"p-queue": "6.6.2",
 		"prettier": "2.3.1",
@@ -80,11 +81,6 @@
 			"rewritePaths": {
 				"/": "dist/"
 			}
-		}
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "yarn lint"
 		}
 	},
 	"repository": {

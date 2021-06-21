@@ -11,12 +11,12 @@ type File = {
 	readonly depth: number
 }
 
-export const ipfsLs = (ipfs: ReturnType<typeof ipfsHttpClient>) => async (
-	cid: string
-): Promise<readonly File[]> => {
-	const set = new Set<File>()
-	for await (const file of ipfs.ls(cid)) {
-		set.add({ ...file, cid: file.cid.toString() })
+export const ipfsLs =
+	(ipfs: ReturnType<typeof ipfsHttpClient>) =>
+	async (cid: string): Promise<readonly File[]> => {
+		const set = new Set<File>()
+		for await (const file of ipfs.ls(cid)) {
+			set.add({ ...file, cid: file.cid.toString() })
+		}
+		return Array.from(set)
 	}
-	return Array.from(set)
-}

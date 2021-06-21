@@ -1,3 +1,4 @@
+import { Context } from '@azure/functions'
 import {
 	Abi,
 	FunctionAddressesOptions,
@@ -14,6 +15,7 @@ import { AsyncReturnType, Merge, SetOptional } from 'type-fest'
 
 export type CallFunctions<T extends V0Options> = (
 	f: Functions,
+	context: Context,
 	options: T
 ) => Promise<
 	UndefinedOr<
