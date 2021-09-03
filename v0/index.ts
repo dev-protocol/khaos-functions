@@ -11,7 +11,7 @@ const httpTrigger: AzureFunction = async (
 	const { body: reqBody } = req
 	const { id, ...props } = reqBody as V0Options
 
-	const funtions = await whenDefined(id, (x) => importFunctions(x))
+	const funtions = await whenDefined(id, importFunctions)
 	const data = await whenDefined(funtions, (f) =>
 		callFunctions(f, context, { id, ...props })
 	)
