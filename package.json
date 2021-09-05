@@ -37,7 +37,7 @@
 		"@devprotocol/util-ts": "2.2.1",
 		"bent": "7.3.12",
 		"ramda": "0.27.1",
-		"type-fest": "2.1.0"
+		"type-fest": "2.2.0"
 	},
 	"devDependencies": {
 		"@ava/typescript": "1.1.1",
