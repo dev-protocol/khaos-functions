@@ -4,12 +4,12 @@ import * as example from '../functions/example'
 import { stub } from 'sinon'
 import { always } from 'ramda'
 
-test('Import functions object from functions dir', async (t) => {
+test.serial('Import functions object from functions dir', async (t) => {
 	const res = await importFunctions('example')
 	t.deepEqual(res, example)
 })
 
-test('Returns undefined when not exists the file', async (t) => {
+test.serial('Returns undefined when not exists the file', async (t) => {
 	const res = await importFunctions('__example')
 	t.is(res, undefined)
 })
