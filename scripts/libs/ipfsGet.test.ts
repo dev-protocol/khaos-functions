@@ -17,16 +17,8 @@ test('Returns data from IPFS', async (t) => {
 test('Returns undefined when the passed CID is not file', async (t) => {
 	const cid = 'QmcbW9PwXLRFbSdfYqekdtBfL1CYK6jzrfJw1vrP9prs6k'
 	const ipfs = {
-		get: (arg: string) => {
-			arg === cid
-				? {
-						[Symbol.iterator]: () => ({
-							next() {
-								return { type: 'dir' }
-							},
-						}),
-				  }
-				: undefined
+		get: async function* (arg: string) {
+			yield arg === cid ? { type: 'dir' } : undefined
 		},
 	}
 	const res = await ipfsGet(ipfs as any)(cid)
