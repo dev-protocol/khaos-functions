@@ -5,15 +5,15 @@ import { ipfsLs } from './ipfsLs'
 test('Returns files from IPFS', async (t) => {
 	const ipfs = createIpfs()
 	const res = await ipfsLs(ipfs)(
-		'QmcbW9PwXLRFbSdfYqekdtBfL1CYK6jzrfJw1vrP9prs6k'
+		'QmaxC88PchKV967XYSZqEZRi1hxktnk8sxDrETNN1UXXzS'
 	)
 	t.deepEqual(res, [
 		{
-			cid: 'QmTP95pM5HumrZYzZZwbDAhq1mz5NMJzD6smxziTsR7uQU',
+			cid: 'QmSfKj57GLmnjthA9PxFt9RLszoJ3W25JwiuE6phgLZPwB',
 			depth: 1,
 			name: 'index.js',
-			path: 'QmcbW9PwXLRFbSdfYqekdtBfL1CYK6jzrfJw1vrP9prs6k/index.js',
-			size: 898,
+			path: 'QmaxC88PchKV967XYSZqEZRi1hxktnk8sxDrETNN1UXXzS/index.js',
+			size: 860,
 			type: 'file',
 		},
 	])
