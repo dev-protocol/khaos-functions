@@ -33,7 +33,7 @@
 	},
 	"dependencies": {
 		"@azure/functions": "3.0.0",
-		"@devprotocol/khaos-core": "1.5.1",
+		"@devprotocol/khaos-core": "1.6.0",
 		"@devprotocol/util-ts": "2.2.1",
 		"bent": "7.3.12",
 		"ramda": "0.27.1",
