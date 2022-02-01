@@ -2,7 +2,7 @@
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import test from 'ava'
-import { fetchRegistry } from './fetchRegistry'
+import { fetchRegistry, Registry } from './fetchRegistry'
 import https from 'https'
 
 const get = async () =>
@@ -24,6 +24,6 @@ const get = async () =>
 
 test('Returns JSON from GitHub', async (t) => {
 	const res = await fetchRegistry()
-	const expected = await get()
+	const expected = (await get()) as Registry
 	t.deepEqual(res, expected)
 })
