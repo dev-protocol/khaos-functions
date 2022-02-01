@@ -37,7 +37,7 @@ test.serial('Passes `id` in the request body to importFunctions', async (t) => {
 	await func(undefined as unknown as Context, {
 		body: { id },
 	})
-	t.deepEqual(importFunctionsSpy.getCall(0).args, [id])
+	t.deepEqual(importFunctionsSpy.getCall(0).args as string[], [id])
 	t.is(importFunctionsStub.callCount, 1)
 })
 
@@ -49,7 +49,7 @@ test.serial(
 		await func({ log: true } as any, {
 			body: expected,
 		})
-		t.deepEqual(callFunctionsSpy.getCall(0).args, [
+		t.deepEqual(callFunctionsSpy.getCall(0).args as [Functions, any, any], [
 			example,
 			{ log: true },
 			expected as any,
