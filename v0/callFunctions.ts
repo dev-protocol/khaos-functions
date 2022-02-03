@@ -1,5 +1,5 @@
 import { Context } from '@azure/functions'
-import { Functions } from '@devprotocol/khaos-core'
+import { Functions, NetworkName } from '@devprotocol/khaos-core'
 import { UndefinedOr, whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
 import {
 	AbiOptions,
@@ -72,7 +72,7 @@ export const callFunctions: CallFunctions<V0Options> = async <
 				whenDefined(
 					(options as AddressesOptions)?.options?.network,
 					(network) => f.addresses({ network, context })
-				)
+				) as any
 			),
 		],
 		[
