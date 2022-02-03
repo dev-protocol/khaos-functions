@@ -36,7 +36,7 @@
 		"@devprotocol/khaos-core": "1.6.0",
 		"@devprotocol/util-ts": "2.2.1",
 		"bent": "7.3.12",
-		"ramda": "0.27.1",
+		"ramda": "0.28.0",
 		"type-fest": "2.11.1"
 	},
 	"devDependencies": {
@@ -48,7 +48,7 @@
 		"@types/dotenv": "8.2.0",
 		"@types/fs-extra": "9.0.13",
 		"@types/node": "16.11.22",
-		"@types/ramda": "0.27.52",
+		"@types/ramda": "0.27.64",
 		"@types/sinon": "10.0.9",
 		"@typescript-eslint/eslint-plugin": "5.10.2",
 		"@typescript-eslint/parser": "5.10.2",
