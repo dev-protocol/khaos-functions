@@ -1,5 +1,5 @@
 import { Context } from '@azure/functions'
-import { Functions, NetworkName } from '@devprotocol/khaos-core'
+import { Functions } from '@devprotocol/khaos-core'
 import { UndefinedOr, whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
 import {
 	AbiOptions,
