@@ -72,7 +72,7 @@ export const callFunctions: CallFunctions<V0Options> = async <
 				whenDefined(
 					(options as AddressesOptions)?.options?.network,
 					(network) => f.addresses({ network, context })
-				) as any
+				) as UndefinedOr<any>
 			),
 		],
 		[
