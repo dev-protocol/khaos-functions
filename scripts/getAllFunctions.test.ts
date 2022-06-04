@@ -11,7 +11,7 @@ stub(fetchRegistry, 'fetchRegistry').callsFake(() =>
 	Promise.resolve([
 		{
 			id: 'example',
-			ipfs: 'QmcbW9PwXLRFbSdfYqekdtBfL1CYK6jzrfJw1vrP9prs6k',
+			ipfs: 'QmSfKj57GLmnjthA9PxFt9RLszoJ3W25JwiuE6phgLZPwB',
 		},
 	])
 )
@@ -20,7 +20,7 @@ let expectedCode: string
 
 test.before(async () => {
 	expectedCode = await ipfsGet(createIpfs())(
-		'QmTP95pM5HumrZYzZZwbDAhq1mz5NMJzD6smxziTsR7uQU'
+		'QmSfKj57GLmnjthA9PxFt9RLszoJ3W25JwiuE6phgLZPwB'
 	).then((x) => x as string)
 })
 
