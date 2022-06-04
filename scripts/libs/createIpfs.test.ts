@@ -1,10 +1,11 @@
 import test from 'ava'
 import { createIpfs } from './createIpfs'
 import ipfsHttpClient from 'ipfs-http-client'
+
 const ipfs = ipfsHttpClient({
 	host: 'ipfs.io',
-	port: 80,
-	protocol: 'http',
+	port: 443,
+	protocol: 'https',
 })
 
 test('Returns IPFS client', (t) => {
