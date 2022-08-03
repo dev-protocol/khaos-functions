@@ -12,7 +12,7 @@ import { join } from 'path'
 
 export const getAllFunctions = async () => {
 	const registry = await fetchRegistry()
-	const ipfs = createIpfs()
+	const ipfs = createIpfs('gateway.pinata.cloud')
 	const get = ipfsGet(ipfs)
 	const tasks = registry.map(({ id, ipfs: cid }) => async () => {
 		const queue = new pQueue({ concurrency: 1 })

@@ -1,9 +1,10 @@
 import ipfsHttpClient from 'ipfs-http-client'
-import { always } from 'ramda'
-const ipfs = ipfsHttpClient({
-	host: 'ipfs.io',
-	port: 443,
-	protocol: 'https',
-})
 
-export const createIpfs: () => ReturnType<typeof ipfsHttpClient> = always(ipfs)
+export const createIpfs: (
+	host?: string
+) => ReturnType<typeof ipfsHttpClient> = (host?: string) =>
+	ipfsHttpClient({
+		host: host ? host : 'ipfs.io',
+		port: 443,
+		protocol: 'https',
+	})
