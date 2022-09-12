@@ -55,7 +55,7 @@
 		"ava": "4.3.3",
 		"bl": "5.0.0",
 		"dotenv": "16.0.2",
-		"eslint": "8.23.0",
+		"eslint": "8.23.1",
 		"eslint-config-prettier": "8.5.0",
 		"eslint-plugin-functional": "4.3.0",
 		"esm": "3.2.25",
