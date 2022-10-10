@@ -42,7 +42,7 @@
 	"devDependencies": {
 		"@ava/typescript": "3.0.1",
 		"@rollup/plugin-multi-entry": "5.0.0",
-		"@rollup/plugin-typescript": "8.5.0",
+		"@rollup/plugin-typescript": "9.0.0",
 		"@types/bent": "7.3.2",
 		"@types/bl": "5.0.2",
 		"@types/dotenv": "8.2.0",
