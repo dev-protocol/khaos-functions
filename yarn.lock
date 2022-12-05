@@ -10,10 +10,14 @@
     escape-string-regexp "^5.0.0"
     execa "^5.1.1"
 
-"@azure/functions@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@azure/functions/-/functions-3.2.0.tgz#c73003db8bd93be186824db29e98e00879bf0f91"
-  integrity sha512-HbE7iORnYcjLzKNf5mIQRJQDTsVxhoXHRWEZ6KWdGh4e7+F9xTloiBicavbSoVmlAYivenIVpryHanVwsQaHUw==
+"@azure/functions@3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@azure/functions/-/functions-3.5.0.tgz#64df210c676637ea720e9896d135046491f20d9b"
+  integrity sha512-RBYGdZIPYT17UPGBcXI9DPlpaEOO5D8r7pDpJsm/2N5eVrpqIRO8VZuoIiZiEQWV0LO3BZNzlvdS87pzBUBJzQ==
+  dependencies:
+    iconv-lite "^0.6.3"
+    long "^4.0.0"
+    uuid "^8.3.0"
 
 "@azure/functions@^3.0.0":
   version "3.0.0"
@@ -4779,7 +4783,7 @@ iconv-lite@0.4.24:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-iconv-lite@^0.6.2:
+iconv-lite@^0.6.2, iconv-lite@^0.6.3:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.6.3.tgz#a52f80bf38da1952eb5c681790719871a1a72501"
   integrity sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==
@@ -9019,6 +9023,11 @@ uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@^8.3.0:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
