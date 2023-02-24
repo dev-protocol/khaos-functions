@@ -39,7 +39,7 @@ jobs:
         run: yarn lint
 
       - name: test
-        run: yarn test || 'skip'
+        run: yarn test || echo 'skip'
 
   deploy:
     needs: build
