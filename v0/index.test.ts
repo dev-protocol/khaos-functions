@@ -12,11 +12,11 @@ import { Functions } from '@devprotocol/khaos-core'
 
 let importFunctionsStub: SinonStub<
 	[id: string],
-	ReturnType<typeof importFunctions['importFunctions']>
+	ReturnType<(typeof importFunctions)['importFunctions']>
 >
 let callFunctionsSpy: SinonSpy<
 	[Functions, Context, V0Options],
-	ReturnType<typeof callFunctions['callFunctions']>
+	ReturnType<(typeof callFunctions)['callFunctions']>
 >
 const importFunctionsSpy = spy(() => Promise.resolve(example))
 
