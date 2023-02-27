@@ -68,7 +68,7 @@
 		"p-retry": "4.6.2",
 		"prettier": "2.8.4",
 		"rimraf": "4.1.2",
-		"rollup": "3.17.2",
+		"rollup": "3.17.3",
 		"rollup-plugin-dts": "5.2.0",
 		"sinon": "15.0.1",
 		"typescript": "4.6.4"
