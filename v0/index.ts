@@ -14,7 +14,7 @@ const httpTrigger: AzureFunction = async (
 
 	const funtions = await whenDefined(id, importFunctions)
 	// eslint-disable-next-line functional/no-expression-statement
-	console.log(
+	context.log(
 		'@@@',
 		id,
 		funtions,
