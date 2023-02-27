@@ -24,7 +24,10 @@ export const getAllFunctions = async () => {
 			const code = await pRetry(
 				async () => {
 					const res = await get(cid)
-					if (!res) throw new Error('')
+					if (!res) {
+						console.log('Empty file fetched, will retry', { id, cid })
+						throw new Error('')
+					}
 
 					return res
 				},
