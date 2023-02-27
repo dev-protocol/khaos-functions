@@ -14,13 +14,12 @@ const httpTrigger: AzureFunction = async (
 
 	const funtions = await whenDefined(id, importFunctions)
 	// eslint-disable-next-line functional/no-expression-statement
-	context.log(
+	console.log(
 		'@@@',
 		id,
 		funtions,
-		sync('**/*', {
-			ignore: ['node_modules'],
-		})
+		sync('dist/functions/**/*'),
+		sync('functions/**/*')
 	)
 	const data = await whenDefined(funtions, (f) =>
 		callFunctions(f, context, { id, ...props })
