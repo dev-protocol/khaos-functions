@@ -1,3 +1,6 @@
+/* eslint-disable functional/no-throw-statement */
+/* eslint-disable functional/no-conditional-statement */
+/* eslint-disable functional/no-promise-reject */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable functional/no-expression-statement */
@@ -9,6 +12,7 @@ import { createIpfs } from './libs/createIpfs'
 import { ipfsGet } from './libs/ipfsGet'
 import { whenDefined } from '@devprotocol/util-ts'
 import { join } from 'path'
+import pRetry from 'p-retry'
 
 export const getAllFunctions = async () => {
 	const registry = await fetchRegistry()
@@ -17,10 +21,20 @@ export const getAllFunctions = async () => {
 	const tasks = registry.map(({ id, ipfs: cid }) => async () => {
 		const queue = new pQueue({ concurrency: 1 })
 		return queue.add(async () => {
-			const code = await get(cid)
+			const code = await pRetry(
+				async () => {
+					const res = await get(cid)
+					if (!res) throw new Error('')
+
+					return res
+				},
+				{ forever: true }
+			)
 			const joined = join(__dirname, '..', 'functions', id, 'index.js')
-			return whenDefined(code, async (c) => outputFile(joined, c))
+			return (
+				whenDefined(code, async (c) => outputFile(joined, c)) ?? new Error('')
+			)
 		})
 	})
-	return new pQueue({ concurrency: 1 }).addAll(tasks)
+	return new pQueue({ concurrency: 1 }).addAll(tasks).then((res) => res)
 }
