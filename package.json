@@ -55,7 +55,7 @@
 		"@typescript-eslint/eslint-plugin": "5.55.0",
 		"@typescript-eslint/parser": "5.55.0",
 		"ava": "5.2.0",
-		"bl": "6.0.0",
+		"bl": "6.0.1",
 		"dotenv": "16.0.3",
 		"eslint": "8.36.0",
 		"eslint-config-prettier": "8.7.0",
