@@ -70,7 +70,7 @@
 		"rimraf": "5.0.1",
 		"rollup": "3.22.0",
 		"rollup-plugin-dts": "5.3.0",
-		"sinon": "15.0.4",
+		"sinon": "15.1.0",
 		"typescript": "5.0.4"
 	},
 	"ava": {
