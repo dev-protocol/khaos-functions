@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Context } from '@azure/functions'
 import { Functions } from '@devprotocol/khaos-core'
 import { UndefinedOr, whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
@@ -48,11 +49,13 @@ export const callFunctions: CallFunctions<V0Options> = async <
 			: never
 	>
 > =>
+	// @ts-ignore
 	cond([
 		[isNil, always(undefined)],
 		[isAbi, always(f.abi)],
 		[
 			isAuthorize,
+			// @ts-ignore
 			always(
 				((opts) =>
 					whenDefinedAll(
@@ -68,6 +71,7 @@ export const callFunctions: CallFunctions<V0Options> = async <
 		],
 		[
 			isAddresses,
+			// @ts-ignore
 			always(
 				whenDefined(
 					(options as AddressesOptions)?.options?.network,
@@ -77,6 +81,7 @@ export const callFunctions: CallFunctions<V0Options> = async <
 		],
 		[
 			isOraclize,
+			// @ts-ignore
 			always(
 				((opts) =>
 					whenDefinedAll(
@@ -92,6 +97,7 @@ export const callFunctions: CallFunctions<V0Options> = async <
 		],
 		[
 			isEvent,
+			// @ts-ignore
 			always(
 				((opts) =>
 					whenDefined(opts?.options?.network, (network) =>
@@ -101,6 +107,7 @@ export const callFunctions: CallFunctions<V0Options> = async <
 		],
 		[
 			isPack,
+			// @ts-ignore
 			always(
 				((opts) =>
 					whenDefined(opts?.options?.results, (results) =>
