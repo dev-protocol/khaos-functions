@@ -1,4 +1,18 @@
 {
 	"extends": ["config:base"],
-	"automerge": true
+	"automerge": true,
+	"packageRules": [
+		{
+			"matchPackagePatterns": ["ipfs-http-client"],
+			"allowedVersions": "49.0.0"
+		},
+		{
+			"matchPackagePatterns": ["p-queue"],
+			"allowedVersions": "6.6.2"
+		},
+		{
+			"matchPackagePatterns": ["p-retry"],
+			"allowedVersions": "4.6.2"
+		}
+	]
 }

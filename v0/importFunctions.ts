@@ -12,7 +12,10 @@ export const importFunctions = async (
 			console.error('Error occurred on function importing:', err)
 			return undefined
 		})
-	return fn?.abi && fn?.addresses && fn?.authorize && fn?.oraclize
+	return fn?.abi &&
+		(fn?.addresses as UndefinedOr<Functions['addresses']>) &&
+		(fn?.authorize as UndefinedOr<Functions['authorize']>) &&
+		(fn?.oraclize as UndefinedOr<Functions['oraclize']>)
 		? fn
 		: undefined
 }
