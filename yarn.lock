@@ -73,13 +73,13 @@
     sinon "9.2.4"
     url-join "4.0.1"
 
-"@devprotocol/util-ts@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@devprotocol/util-ts/-/util-ts-3.0.0.tgz#031b251d59dfd9199a4beee421d8b28c0d2ee7aa"
-  integrity sha512-oDg7IeJCeAajGGG79C+UXJE7pKrGsDui3yn9yxSx5SpGFejlAJ3E3af9CpF+uK71NNropglbf/W4KCs2unpGaA==
+"@devprotocol/util-ts@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@devprotocol/util-ts/-/util-ts-3.0.1.tgz#864b99de5bd77eca66a53cff0c859e4a5b0f00d0"
+  integrity sha512-EHNNC7r327IhaEomq08GDcPLNflCH3GrUa2pzckWR7iHKjoT4UdbWluSFlC3n5qXrR12vT9AS/ck6OLrbgDn+A==
   dependencies:
     ethers "^5.7.2"
-    ramda "^0.28.0"
+    ramda "^0.29.0"
 
 "@ensdomains/ens@^0.4.4":
   version "0.4.5"
@@ -8061,7 +8061,7 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-ramda@0.29.0:
+ramda@0.29.0, ramda@^0.29.0:
   version "0.29.0"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.29.0.tgz#fbbb67a740a754c8a4cbb41e2a6e0eb8507f55fb"
   integrity sha512-BBea6L67bYLtdbOqfp8f58fPMqEwx0doL+pAi8TZyp2YWz8R9G8z9x75CZI8W+ftqhFHCpEX2cRnUUXK130iKA==
@@ -8070,11 +8070,6 @@ ramda@^0.27.1:
   version "0.27.1"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.27.1.tgz#66fc2df3ef873874ffc2da6aa8984658abacf5c9"
   integrity sha512-PgIdVpn5y5Yns8vqb8FzBUEYn98V3xcPgawAkkgj0YJ0qDsnHCiNmZYfOGMgOvoB0eWFLpYbhxUR3mxfDIMvpw==
-
-ramda@^0.28.0:
-  version "0.28.0"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.28.0.tgz#acd785690100337e8b063cab3470019be427cc97"
-  integrity sha512-9QnLuG/kPVgWvMQ4aODhsBUFKOUmnbUnsSXACv+NCQZcHbeb+v8Lodp8OVxtRULN1/xOyYLLaL6npE6dMq5QTA==
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5, randombytes@^2.0.6, randombytes@^2.1.0:
   version "2.1.0"
