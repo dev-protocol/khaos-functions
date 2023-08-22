@@ -44,7 +44,7 @@
 		"@ava/typescript": "4.1.0",
 		"@rollup/plugin-multi-entry": "6.0.0",
 		"@rollup/plugin-typescript": "11.1.2",
-		"@types/bent": "7.3.3",
+		"@types/bent": "7.3.4",
 		"@types/bl": "5.0.2",
 		"@types/dotenv": "8.2.0",
 		"@types/fs-extra": "11.0.1",
