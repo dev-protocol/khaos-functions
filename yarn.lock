@@ -2425,10 +2425,10 @@ bip39@2.5.0:
     safe-buffer "^5.0.1"
     unorm "^1.3.3"
 
-bl@6.0.6:
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/bl/-/bl-6.0.6.tgz#a9373de876e3619c707d0fb15af011037cc380a7"
-  integrity sha512-NqSAj8YLlID2Tbd7/ZB2Gj+N+2wwsAfDD38T1beT8KYytNwJEnxFTGOpvrGY0MTWq7VkWzuQ4PC3nBNgrMGWBQ==
+bl@6.0.7:
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/bl/-/bl-6.0.7.tgz#1ee70a88044ad3ca9219a6ff94206a193dd4c39d"
+  integrity sha512-9FNh0IvlWSU5C9BCDhw0IovmhuqevzBX1AME7BdFHNDMfOju4NmwRWoBrfz5Srs+JNBhxfjrPLxZSnDotgSs9A==
   dependencies:
     buffer "^6.0.3"
     inherits "^2.0.4"
