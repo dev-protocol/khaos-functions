@@ -51,7 +51,7 @@
 		"@types/glob": "^8.1.0",
 		"@types/node": "20.8.10",
 		"@types/ramda": "0.29.7",
-		"@types/sinon": "10.0.20",
+		"@types/sinon": "17.0.0",
 		"@typescript-eslint/eslint-plugin": "5.62.0",
 		"@typescript-eslint/parser": "5.62.0",
 		"ava": "5.3.1",
