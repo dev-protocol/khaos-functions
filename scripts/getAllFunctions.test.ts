@@ -15,14 +15,14 @@ stub(fetchRegistry, 'fetchRegistry').callsFake(() =>
 			id: 'example',
 			ipfs: 'QmSfKj57GLmnjthA9PxFt9RLszoJ3W25JwiuE6phgLZPwB',
 		},
-	])
+	]),
 )
 
 let expectedCode: string
 
 test.before(async () => {
-	expectedCode = await ipfsGet(createIpfs())(
-		'QmSfKj57GLmnjthA9PxFt9RLszoJ3W25JwiuE6phgLZPwB'
+	expectedCode = await ipfsGet('https://gateway.pinata.cloud/ipfs')(
+		'QmSfKj57GLmnjthA9PxFt9RLszoJ3W25JwiuE6phgLZPwB',
 	).then((x) => x as string)
 })
 
@@ -47,7 +47,7 @@ test.serial('Retry', async (t) => {
 				return Promise.resolve(expectedCode)
 			}
 			return Promise.resolve(undefined)
-		}
+		},
 	)
 
 	await getAllFunctions()

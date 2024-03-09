@@ -8,7 +8,6 @@
 import { fetchRegistry } from './libs/fetchRegistry'
 import { outputFile } from 'fs-extra'
 import pQueue from 'p-queue'
-import { createIpfs } from './libs/createIpfs'
 import { ipfsGet } from './libs/ipfsGet'
 import { whenDefined } from '@devprotocol/util-ts'
 import { join } from 'path'
@@ -16,8 +15,7 @@ import pRetry from 'p-retry'
 
 export const getAllFunctions = async () => {
 	const registry = await fetchRegistry()
-	const ipfs = createIpfs('gateway.pinata.cloud')
-	const get = ipfsGet(ipfs)
+	const get = ipfsGet('https://gateway.pinata.cloud/ipfs')
 	const tasks = registry.map(({ id, ipfs: cid }) => async () => {
 		const queue = new pQueue({ concurrency: 1 })
 		return queue.add(async () => {
@@ -31,7 +29,7 @@ export const getAllFunctions = async () => {
 
 					return res
 				},
-				{ forever: true }
+				{ forever: true },
 			)
 			const joined = join(__dirname, '..', 'functions', id, 'index.js')
 			return (
