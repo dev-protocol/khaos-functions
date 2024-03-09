@@ -15,7 +15,7 @@ import pRetry from 'p-retry'
 
 export const getAllFunctions = async () => {
 	const registry = await fetchRegistry()
-	const get = ipfsGet('https://gateway.pinata.cloud/ipfs')
+	const get = ipfsGet('https://cloudflare-ipfs.com/ipfs')
 	const tasks = registry.map(({ id, ipfs: cid }) => async () => {
 		const queue = new pQueue({ concurrency: 1 })
 		return queue.add(async () => {
