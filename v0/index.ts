@@ -7,7 +7,7 @@ import { sync } from 'glob'
 
 const httpTrigger: AzureFunction = async (
 	context: Context,
-	req: HttpRequest
+	req: HttpRequest,
 ): Promise<ReturnTypeOfAzureFunctions> => {
 	const { body: reqBody } = req
 	const { id, ...props } = reqBody as V0Options
@@ -19,10 +19,10 @@ const httpTrigger: AzureFunction = async (
 		id,
 		funtions,
 		sync('dist/functions/**/*'),
-		sync('functions/**/*')
+		sync('functions/**/*'),
 	)
 	const data = await whenDefined(funtions, (f) =>
-		callFunctions(f, context, { id, ...props })
+		callFunctions(f, context, { id, ...props }),
 	)
 	const body: V0Results<V0Options> = { data }
 

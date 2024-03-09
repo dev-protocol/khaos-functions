@@ -17,7 +17,7 @@ const get = async () =>
 				res.on('end', () => {
 					resolve(JSON.parse(Buffer.concat(data) as any))
 				})
-			}
+			},
 		)
 		req.end()
 	})

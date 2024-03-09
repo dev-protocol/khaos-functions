@@ -22,7 +22,7 @@ const importFunctionsSpy = spy(() => Promise.resolve(example))
 
 test.beforeEach(() => {
 	importFunctionsStub = stub(importFunctions, 'importFunctions').callsFake(
-		importFunctionsSpy
+		importFunctionsSpy,
 	)
 	callFunctionsSpy = spy(callFunctions, 'callFunctions')
 })
@@ -55,7 +55,7 @@ test.serial(
 			expected as any,
 		])
 		t.is(callFunctionsSpy.callCount, 1)
-	}
+	},
 )
 
 test.serial('Returns object for Azure Functions', async (t) => {

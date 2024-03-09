@@ -21,7 +21,7 @@ test.serial(
 		const res = await importFunctions('example')
 		t.is(res, undefined)
 		x.restore()
-	}
+	},
 )
 
 test.serial(
@@ -31,7 +31,7 @@ test.serial(
 		const res = await importFunctions('example')
 		t.is(res, undefined)
 		x.restore()
-	}
+	},
 )
 
 test.serial(
@@ -41,7 +41,7 @@ test.serial(
 		const res = await importFunctions('example')
 		t.is(res, undefined)
 		x.restore()
-	}
+	},
 )
 
 test.serial(
@@ -51,5 +51,5 @@ test.serial(
 		const res = await importFunctions('example')
 		t.is(res, undefined)
 		x.restore()
-	}
+	},
 )

@@ -16,22 +16,22 @@ import { AsyncReturnType, Merge, SetOptional } from 'type-fest'
 export type CallFunctions<T extends V0Options> = (
 	f: Functions,
 	context: Context,
-	options: T
+	options: T,
 ) => Promise<
 	UndefinedOr<
 		T extends AbiOptions
 			? Abi
 			: T extends AddressesOptions
-			? string
-			: T extends AuthorizeOptions
-			? boolean
-			: T extends OraclizeOptions
-			? FunctionOraclizeResults
-			: T extends EventOptions
-			? string
-			: T extends PackOptions
-			? FunctionPackResults
-			: never
+				? string
+				: T extends AuthorizeOptions
+					? boolean
+					: T extends OraclizeOptions
+						? FunctionOraclizeResults
+						: T extends EventOptions
+							? string
+							: T extends PackOptions
+								? FunctionPackResults
+								: never
 	>
 >
 

@@ -27,26 +27,26 @@ const isEvent = (opts: V0Options): opts is EventOptions =>
 const isPack = (opts: V0Options): opts is PackOptions => opts.method === 'pack'
 
 export const callFunctions: CallFunctions<V0Options> = async <
-	T extends V0Options
+	T extends V0Options,
 >(
 	f: Functions,
 	context: Context,
-	options: T
+	options: T,
 ): Promise<
 	UndefinedOr<
 		T extends AbiOptions
 			? Functions['abi']
 			: T extends AddressesOptions
-			? AsyncReturnType<Functions['addresses']>
-			: T extends AuthorizeOptions
-			? AsyncReturnType<Functions['authorize']>
-			: T extends OraclizeOptions
-			? AsyncReturnType<Functions['oraclize']>
-			: T extends EventOptions
-			? AsyncReturnType<Functions['event']>
-			: T extends PackOptions
-			? AsyncReturnType<Functions['pack']>
-			: never
+				? AsyncReturnType<Functions['addresses']>
+				: T extends AuthorizeOptions
+					? AsyncReturnType<Functions['authorize']>
+					: T extends OraclizeOptions
+						? AsyncReturnType<Functions['oraclize']>
+						: T extends EventOptions
+							? AsyncReturnType<Functions['event']>
+							: T extends PackOptions
+								? AsyncReturnType<Functions['pack']>
+								: never
 	>
 > =>
 	// @ts-ignore
@@ -65,8 +65,8 @@ export const callFunctions: CallFunctions<V0Options> = async <
 							opts?.options?.request,
 						],
 						([message, secret, request]) =>
-							f.authorize({ message, secret, request })
-					))(options as AuthorizeOptions)
+							f.authorize({ message, secret, request }),
+					))(options as AuthorizeOptions),
 			),
 		],
 		[
@@ -75,8 +75,8 @@ export const callFunctions: CallFunctions<V0Options> = async <
 			always(
 				whenDefined(
 					(options as AddressesOptions)?.options?.network,
-					(network) => f.addresses({ network, context })
-				)
+					(network) => f.addresses({ network, context }),
+				),
 			),
 		],
 		[
@@ -91,8 +91,8 @@ export const callFunctions: CallFunctions<V0Options> = async <
 							opts?.options?.network,
 						],
 						([signatureOptions, query, network]) =>
-							f.oraclize({ signatureOptions, query, network })
-					))(options as OraclizeOptions)
+							f.oraclize({ signatureOptions, query, network }),
+					))(options as OraclizeOptions),
 			),
 		],
 		[
@@ -101,8 +101,8 @@ export const callFunctions: CallFunctions<V0Options> = async <
 			always(
 				((opts) =>
 					whenDefined(opts?.options?.network, (network) =>
-						f.event({ network })
-					))(options as EventOptions)
+						f.event({ network }),
+					))(options as EventOptions),
 			),
 		],
 		[
@@ -111,8 +111,8 @@ export const callFunctions: CallFunctions<V0Options> = async <
 			always(
 				((opts) =>
 					whenDefined(opts?.options?.results, (results) =>
-						f.pack({ results })
-					))(options as PackOptions)
+						f.pack({ results }),
+					))(options as PackOptions),
 			),
 		],
 	])(options)

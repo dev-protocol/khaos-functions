@@ -11,7 +11,7 @@ export const { abi, addresses, authorize, oraclize, event, pack }: Functions = {
 			message: 'message',
 			status: 1,
 			statusMessage: 'statusMessage',
-		})
+		}),
 	),
 	event: always(Promise.resolve('Query')),
 	pack: ({ results }) =>

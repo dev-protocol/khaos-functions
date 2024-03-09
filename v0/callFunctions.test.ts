@@ -6,7 +6,7 @@ test('Returns `abi` when the passed options.method is "abi"', async (t) => {
 	const res = await callFunctions(
 		example,
 		{} as any,
-		{ id: '', method: 'abi' } as any
+		{ id: '', method: 'abi' } as any,
 	)
 	t.is(res, example.abi)
 })
@@ -83,14 +83,14 @@ test('Returns undefined when the passed options.method is "addresses" but option
 			method: 'addresses',
 			options: { network: undefined },
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'addresses',
 		}),
-		undefined
+		undefined,
 	)
 })
 
@@ -101,7 +101,7 @@ test('Returns undefined when the passed options.method is "authorize" but option
 			method: 'authorize',
 			options: { message: '', secret: '', request: undefined },
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
@@ -109,7 +109,7 @@ test('Returns undefined when the passed options.method is "authorize" but option
 			method: 'authorize',
 			options: { message: '', secret: undefined, request: {} as any },
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
@@ -117,7 +117,7 @@ test('Returns undefined when the passed options.method is "authorize" but option
 			method: 'authorize',
 			options: { message: undefined, secret: '', request: {} as any },
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
@@ -125,14 +125,14 @@ test('Returns undefined when the passed options.method is "authorize" but option
 			method: 'authorize',
 			options: { message: undefined, secret: undefined, request: undefined },
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'authorize',
 		}),
-		undefined
+		undefined,
 	)
 })
 
@@ -151,7 +151,7 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 				network: undefined,
 			},
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
@@ -163,7 +163,7 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 				network: 'mainnet',
 			},
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
@@ -179,7 +179,7 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 				network: 'mainnet',
 			},
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
@@ -191,14 +191,14 @@ test('Returns undefined when the passed options.method is "oraclize" but options
 				network: undefined,
 			},
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'oraclize',
 		}),
-		undefined
+		undefined,
 	)
 })
 
@@ -211,14 +211,14 @@ test('Returns undefined when the passed options.method is "event" but options.op
 				network: undefined,
 			},
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'event',
 		}),
-		undefined
+		undefined,
 	)
 })
 
@@ -231,13 +231,13 @@ test('Returns undefined when the passed options.method is "pack" but options.opt
 				results: undefined,
 			},
 		}),
-		undefined
+		undefined,
 	)
 	t.is(
 		await callFunctions(example, {} as any, {
 			id: '',
 			method: 'pack',
 		}),
-		undefined
+		undefined,
 	)
 })

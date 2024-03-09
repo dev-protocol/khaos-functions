@@ -22,7 +22,7 @@ test('Pass the specific host name', (t) => {
 				host: 'gateway.pinata.cloud',
 				port: 443,
 				protocol: 'https',
-			})
-		)
+			}),
+		),
 	)
 })

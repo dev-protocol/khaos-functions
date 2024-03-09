@@ -13,7 +13,7 @@ test('Returns files from IPFS', async (t) => {
 						path: 'QmaxC88PchKV967XYSZqEZRi1hxktnk8sxDrETNN1UXXzS/index.js',
 						size: 860,
 						type: 'file',
-				  }
+					}
 				: undefined
 		},
 	}

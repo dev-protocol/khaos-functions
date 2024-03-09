@@ -2,7 +2,7 @@ import { Functions } from '@devprotocol/khaos-core'
 import { UndefinedOr } from '@devprotocol/util-ts'
 
 export const importFunctions = async (
-	id: string
+	id: string,
 ): Promise<UndefinedOr<Functions>> => {
 	const fn: UndefinedOr<Functions> = await import(`../dist/functions/${id}`)
 		// eslint-disable-next-line functional/functional-parameters

@@ -8,12 +8,12 @@ export type Registry = readonly [
 	{
 		readonly id: string
 		readonly ipfs: string
-	}
+	},
 ]
 
 export const fetchRegistry = always(
 	(async (fetcher) =>
 		fetcher(`${URL}?${Math.random()}`).then((r) => r as unknown as Registry))(
-		bent('json')
-	)
+		bent('json'),
+	),
 )
