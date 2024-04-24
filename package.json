@@ -38,7 +38,7 @@
 		"bent": "7.3.12",
 		"glob": "^10.0.0",
 		"ramda": "0.29.1",
-		"type-fest": "4.16.0"
+		"type-fest": "4.17.0"
 	},
 	"devDependencies": {
 		"@ava/typescript": "4.1.0",
