@@ -37,7 +37,7 @@
 		"@devprotocol/util-ts": "4.0.0",
 		"bent": "7.3.12",
 		"glob": "^10.0.0",
-		"ramda": "0.29.1",
+		"ramda": "0.30.0",
 		"type-fest": "4.17.0"
 	},
 	"devDependencies": {
