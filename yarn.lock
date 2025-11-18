@@ -2108,10 +2108,10 @@ bl@*:
     inherits "^2.0.4"
     readable-stream "^4.2.0"
 
-bl@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/bl/-/bl-6.1.0.tgz#cc35ce7a2e8458caa8c8fb5deeed6537b73e4504"
-  integrity sha512-ClDyJGQkc8ZtzdAAbAwBmhMSpwN/sC9HA8jxdYm6nVUbCfZbe2mgza4qh7AuEYyEPB/c4Kznf9s66bnsKMQDjw==
+bl@6.1.4:
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/bl/-/bl-6.1.4.tgz#107fb9c9a4d0507d8c064b50ba7036deee9fcfa6"
+  integrity sha512-ZV/9asSuknOExbM/zPPA8z00lc1ihPKWaStHkkQrxHNeYx+yY+TmF+v80dpv2G0mv3HVXBu7ryoAsxbFFhf4eg==
   dependencies:
     "@types/readable-stream" "^4.0.0"
     buffer "^6.0.3"
