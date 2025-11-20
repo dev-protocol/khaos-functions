@@ -936,12 +936,12 @@
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.3.2.tgz#fc8c2825e4ed2142473b4a81064e6e081463d1b3"
   integrity sha512-eI5Yrz3Qv4KPUa/nSIAi0h+qX0XyewOliug5F2QAtuRg6Kjg6jfmxe1GIwoIRhZspD1A0RP8ANrPwvEXXtRFog==
 
-"@types/ramda@0.30.2":
-  version "0.30.2"
-  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.30.2.tgz#70661b20c1bb969589a551b7134ae75008ffbfb6"
-  integrity sha512-PyzHvjCalm2BRYjAU6nIB3TprYwMNOUY/7P/N8bSzp9W/yM2YrtGtAnnVtaCNSeOZ8DzKyFDvaqQs7LnWwwmBA==
+"@types/ramda@0.31.1":
+  version "0.31.1"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.31.1.tgz#da637f3110b0677521dbc13d8a86ec7cbbf8e3fe"
+  integrity sha512-Vt6sFXnuRpzaEj+yeutA0q3bcAsK7wdPuASIzR9LXqL4gJPyFw8im9qchlbp4ltuf3kDEIRmPJTD/Fkg60dn7g==
   dependencies:
-    types-ramda "^0.30.1"
+    types-ramda "^0.31.0"
 
 "@types/readable-stream@^4.0.0":
   version "4.0.10"
@@ -7764,10 +7764,10 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-ramda@0.30.1:
-  version "0.30.1"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.30.1.tgz#7108ac95673062b060025052cd5143ae8fc605bf"
-  integrity sha512-tEF5I22zJnuclswcZMc8bDIrwRHRzf+NqVEmqg50ShAZMP7MWeR/RGDthfM/p+BlqvF2fXAzpn8i+SJcYD3alw==
+ramda@0.32.0:
+  version "0.32.0"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.32.0.tgz#b2116807b59b6b177af7a2ad19b14a3653570e96"
+  integrity sha512-GQWAHhxhxWBWA8oIBr1XahFVjQ9Fic6MK9ikijfd4TZHfE2+urfk+irVlR5VOn48uwMgM+loRRBJd6Yjsbc0zQ==
 
 ramda@^0.27.1:
   version "0.27.1"
@@ -9150,10 +9150,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-types-ramda@^0.30.1:
-  version "0.30.1"
-  resolved "https://registry.yarnpkg.com/types-ramda/-/types-ramda-0.30.1.tgz#03d255128e3696aeaac76281ca19949e01dddc78"
-  integrity sha512-1HTsf5/QVRmLzcGfldPFvkVsAdi1db1BBKzi7iW3KBUlOICg/nKnFS+jGqDJS3YD8VsWbAh7JiHeBvbsw8RPxA==
+types-ramda@^0.31.0:
+  version "0.31.0"
+  resolved "https://registry.yarnpkg.com/types-ramda/-/types-ramda-0.31.0.tgz#7cb72d1133107679855aab1e57a0cbffff3ea8b1"
+  integrity sha512-vaoC35CRC3xvL8Z6HkshDbi6KWM1ezK0LHN0YyxXWUn9HKzBNg/T3xSGlJZjCYspnOD3jE7bcizsp0bUXZDxnQ==
   dependencies:
     ts-toolbelt "^9.6.0"
 
