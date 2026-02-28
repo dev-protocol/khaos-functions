@@ -61,7 +61,7 @@
 		"eslint-config-prettier": "10.1.8",
 		"eslint-plugin-functional": "4.4.1",
 		"esm": "3.2.25",
-		"fs-extra": "11.3.2",
+		"fs-extra": "11.3.3",
 		"husky": "8.0.3",
 		"ipfs-http-client": "49.0.0",
 		"p-queue": "6.6.2",
