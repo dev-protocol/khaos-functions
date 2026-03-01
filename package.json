@@ -32,7 +32,7 @@
 		"prepare": "husky install"
 	},
 	"dependencies": {
-		"@azure/functions": "3.5.1",
+		"@azure/functions": "4.11.2",
 		"@devprotocol/khaos-core": "1.6.0",
 		"@devprotocol/util-ts": "4.0.0",
 		"bent": "7.3.12",
