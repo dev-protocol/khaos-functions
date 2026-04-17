@@ -54,7 +54,7 @@
 		"@types/sinon": "17.0.4",
 		"@typescript-eslint/eslint-plugin": "5.62.0",
 		"@typescript-eslint/parser": "5.62.0",
-		"ava": "5.3.1",
+		"ava": "7.0.0",
 		"bl": "6.1.6",
 		"dotenv": "16.6.1",
 		"eslint": "8.57.1",
